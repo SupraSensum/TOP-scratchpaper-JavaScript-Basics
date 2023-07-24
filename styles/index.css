@@ -16,7 +16,7 @@ body {
 }
 
 body > * {
-    padding: 32px 15vw;
+    padding: 32px 20vw;
 }
 
 header,
@@ -38,6 +38,12 @@ footer {
     display: flex;
     background-color: #F4A261;
     flex: 1 1 auto;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.scratchpaper-links > .title {
+    text-align: center;
 }
 
 .scratchpaper-links a {
@@ -55,6 +61,6 @@ ol {
 
 /* DEBUGGING */
 
-.scratchpaper-links {
+.scratchpaper-links > * {
     /* border: 2px solid red; */
 }
