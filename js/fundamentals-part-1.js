@@ -70,4 +70,23 @@ let currentIntruderName;
 //   let age
 
 // The real deal code
-alert("Hello, World! Welcome to Dante’s last circle of Hell :-)")
+alert("Hello, World! Welcome to Dante’s last circle of Hell :-)");
+
+// // Machine start demo
+// // Following this: https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/Math#comparison_operators
+// // I really tried getting this running, but DevTools console keeps throwing a TypeError. Onwards!
+// const machineButton = document.querySelector("button");
+// const machineText = document.querySelector("p");
+
+// machineButton.addEventListener("click", updateBtn);
+
+// function updateBtn() {
+//     if (machineButton.textContent === "Start machine!") {
+//         machineButton.textContent = "Stop machine!";
+//         machineText.textContent = "You're in Dante's last circle of hell.";
+//     } else {
+//         machineButton.textContent = "Start machine!";
+//         machineText.textContent = "You're in purgatory.";
+//     }
+// }
+
