@@ -3,11 +3,11 @@ console.log("Hello, World! straight from the linked .js file!");
 // First message assignment demo
 let message;
 message = 'Hello!';
-alert(message);
+// alert(message);
 
 // Message assignment demo simplifying the let command
 let message2 = "World!";
-alert(message2);
+// alert(message2);
 
 // Demo defining multiple variables at once; not recommended
 let user = 'John', age = 25, message3 = 'Hello';
@@ -32,11 +32,23 @@ let user4 = 'John'
 let hello = 'Hello, World!';
 let hello_world_alert;
 hello_world_alert = hello;
-alert(hello);
-alert(hello_world_alert);
+// alert(hello);
+// alert(hello_world_alert);
 
 // Playing with const's
 // We've also switched to using camelCase in our variable names, as a demo
 // I used the '+' operator just to see if it would work. It did. Not sure if that is best practice, though.
 const myBirthday = '1970-01-01';
 alert('My birthday is '+myBirthday);
+
+// Constants should be uppercase and use underscores
+// I noticed at this point that the tutorial I am following is mixing and 
+// matching single and double quotes ( ' and " ). Apparently, according to
+// the almighty chatGPT, that's fine. There is no difference in JS. Yay? Yay.
+// Of course, consistency is key, but we'll be ignorating that in this JS
+// to really drive the point home.
+const COLOR_RED = "F00";
+const COLOR_BLUE = '00F';
+
+let color = COLOR_BLUE;
+alert(color);
