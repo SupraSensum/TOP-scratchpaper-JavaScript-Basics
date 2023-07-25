@@ -34,3 +34,9 @@ let hello_world_alert;
 hello_world_alert = hello;
 alert(hello);
 alert(hello_world_alert);
+
+// Playing with const's
+// We've also switched to using camelCase in our variable names, as a demo
+// I used the '+' operator just to see if it would work. It did. Not sure if that is best practice, though.
+const myBirthday = '1970-01-01';
+alert('My birthday is '+myBirthday);
