@@ -70,7 +70,7 @@ let currentIntruderName;
 //   let age
 
 // The real deal code
-alert("Hello, World! Welcome to Dante’s last circle of Hell :-)");
+// alert("Hello, World! Welcome to Dante’s last circle of Hell :-)");
 
 // // Machine start demo
 // // Following this: https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/Math#comparison_operators
@@ -89,4 +89,3 @@ alert("Hello, World! Welcome to Dante’s last circle of Hell :-)");
 //         machineText.textContent = "You're in purgatory.";
 //     }
 // }
-
