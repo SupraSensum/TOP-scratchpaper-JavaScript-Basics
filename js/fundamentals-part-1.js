@@ -39,7 +39,7 @@ hello_world_alert = hello;
 // We've also switched to using camelCase in our variable names, as a demo
 // I used the '+' operator just to see if it would work. It did. Not sure if that is best practice, though.
 const myBirthday = '1970-01-01';
-// alert('My birthday is '+myBirthday);
+// alert('My birthday is ' + myBirthday);
 
 // Constants should be uppercase and use underscores
 // I noticed at this point that the tutorial I am following is mixing and 
@@ -58,7 +58,7 @@ let admin,
     name;
 name = 'John';
 admin = name;
-alert(admin);
+// alert(admin);
 
 // Following this: https://javascript.info/task/declare-variables
 let planetEarth;
@@ -68,3 +68,6 @@ let currentIntruderName;
 // My answer:
 //   const BIRTHDAY
 //   let age
+
+// The real deal code
+alert("Hello, World! Welcome to Dante’s last circle of Hell :-)")
