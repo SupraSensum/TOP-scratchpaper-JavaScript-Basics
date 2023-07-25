@@ -62,7 +62,7 @@ alert(admin);
 
 // Following this: https://javascript.info/task/declare-variables
 let planetEarth;
-let intruderName;
+let currentIntruderName;
 
 // Following this: https://javascript.info/task/uppercast-constant
 // My answer:
