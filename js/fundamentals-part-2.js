@@ -29,16 +29,17 @@ let userPassword;
 // }
 
 // Login prompting using if statements and conditional operators
-if (userName == "Admin") {
+// This ended up being the correct solution, but I failed to use strict equality (===)
+if (userName === "Admin") {
     userPassword = prompt("Enter password");
-    if (userPassword == "TheMaster") {
+    if (userPassword === "TheMaster") {
         alert("Welcome!");
-    } else if (userPassword == null || userPassword == "") {
+    } else if (userPassword === null || userPassword === "") {
         alert("Cancelled");
     } else {
         alert("Wrong password");
     }
-} else if (userName == null || userName == "") {
+} else if (userName === null || userName === "") {
     alert("Cancelled");
 } else {
     alert("I don't know you");
