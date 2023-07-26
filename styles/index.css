@@ -46,7 +46,8 @@ footer {
 }
 
 .content .sidebar {
-    flex: 0 0 249px;
+    flex: 1 1 33vw;
+    max-width: 249px;
     background-color: #f7f4f3;
     border-right: 1px solid #e9e6e4;
 }
