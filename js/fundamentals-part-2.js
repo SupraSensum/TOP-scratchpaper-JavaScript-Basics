@@ -46,3 +46,14 @@
 // } else {
 //     alert("I don't know you");
 // }
+
+// // Act pretentious
+// // From this lesson: https://javascript.info/task/check-standard
+// let userAnswer = prompt('What\'s the "official" name of JavaScript?');
+
+// if (userAnswer === "ECMAScript") {
+//     alert("Right!");
+// } else {
+//     alert('You don\'t know? "ECMAScript"!');
+// }
+
