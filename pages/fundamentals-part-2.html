@@ -11,7 +11,7 @@
 <body>
     <h1>Fundamentals Part 2</h1>
     <p>Look the .js doc, por favor</p>
-    <script>
+    <!-- <script>
         let name = 'Rafael';
         // alert(`The guy's name is ${name}`)
         console.log(`The guy's name is ${name}`);
@@ -20,7 +20,7 @@
         // alert(`The guy is ${`some goon named ${name}`}.`);
         let isGreater = 4 > 1;
         // alert(isGreater);
-    </script>
+    </script> -->
     <button id="greet">Press me</button>
     <!-- <script>
         const button = document.querySelector("button");
@@ -36,7 +36,7 @@
     <h2>Username</h2>
     <p id="username-status">Username undefined</p>
     <button id="username">Update username</button>
-    <script>
+    <!-- <script>
         const button = document.querySelector("button");
 
         function updateUsername() {
@@ -45,9 +45,19 @@
         }
 
         document.getElementById("username").addEventListener("click", updateUsername);
-    </script>
+    </script> -->
     <div class="lil-break"></div>
     <h1>STRAIGHT GOOFIN', YA DIG?</h1>
     <div class="lil-break"></div>
+    <button id="html-wrapper-text-button">wrap some html</button>
+    <div id="html-wrapper-text">NOTHING INJECTED YET!</div>
+    <script>
+        // I don't think I need to create a const button as I've done above, blindly copying others' work... lol
+        function injectBlinkingString() {
+            document.getElementById("html-wrapper-text").innerHTML = "Huzzah! Injection successful!";
+        }
+
+        document.getElementById("html-wrapper-text-button").addEventListener("click", injectBlinkingString);
+    </script>
 </body>
 </html>
