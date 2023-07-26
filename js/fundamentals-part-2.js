@@ -57,3 +57,26 @@
 //     alert('You don\'t know? "ECMAScript"!');
 // }
 
+// // Show the sign
+// // I've provided 2 different implementations
+// let userNumInput = prompt("Enter a number","");
+// let userNumSign = 0;
+
+// // userNumInput > 0 ? userNumSign = 1 :
+// //     userNumInput < 0 ? userNumSign = -1 :
+// //     userNumSign = 0;
+
+// if (userNumInput > 0) {
+//     userNumSign = 1;
+// } else if (userNumInput < 0) {
+//     userNumSign = -1;
+// }
+
+// alert(userNumSign);
+
+// a + b < 4 ? result = 'Below' : result = 'Over';
+
+// let message = login == 'Employee' ? 'Hello' :
+//     login == 'Director' ? 'Greetings' :
+//     login == '' ? 'No login' :
+//     '';
