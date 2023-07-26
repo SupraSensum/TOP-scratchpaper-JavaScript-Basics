@@ -1,7 +1,9 @@
 // alert(Infinity);
 
-let userName = prompt("Enter username");
-let userPassword;
+// // Login prompting
+
+// let userName = prompt("Enter username");
+// let userPassword;
 
 // // Login prompting using switch cases
 // switch (userName) {
@@ -28,19 +30,19 @@ let userPassword;
 //         break;
 // }
 
-// Login prompting using if statements and conditional operators
-// This ended up being the correct solution, but I failed to use strict equality (===)
-if (userName === "Admin") {
-    userPassword = prompt("Enter password");
-    if (userPassword === "TheMaster") {
-        alert("Welcome!");
-    } else if (userPassword === null || userPassword === "") {
-        alert("Cancelled");
-    } else {
-        alert("Wrong password");
-    }
-} else if (userName === null || userName === "") {
-    alert("Cancelled");
-} else {
-    alert("I don't know you");
-}
+// // Login prompting using if statements and conditional operators
+// // This ended up being the correct solution, but I failed to use strict equality (===)
+// if (userName === "Admin") {
+//     userPassword = prompt("Enter password");
+//     if (userPassword === "TheMaster") {
+//         alert("Welcome!");
+//     } else if (userPassword === null || userPassword === "") {
+//         alert("Cancelled");
+//     } else {
+//         alert("Wrong password");
+//     }
+// } else if (userName === null || userName === "") {
+//     alert("Cancelled");
+// } else {
+//     alert("I don't know you");
+// }
