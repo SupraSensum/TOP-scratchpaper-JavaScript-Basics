@@ -1,14 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Fundamentals Part 2</title>
-        <link rel="stylesheet" href="../styles/fundamentals-part-2.css">
-        <script src="../js/fundamentals-part-2.js"></script>
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentals Part 2</title>
+    <link rel="stylesheet" href="../styles/fundamentals-part-2.css">
+    <script src="../js/fundamentals-part-2.js"></script>
+</head>
 <body>
-    
+    <h1>Fundamentals Part 2</h1>
+    <p>Look the .js doc, por favor</p>
+    <script>
+        let name = 'Rafael';
+        // alert(`The guy's name is ${name}`)
+        console.log(`The guy's name is ${name}`);
+        // Let's try nesting alerts inside of that ${} thing
+        // Holy crap! It worked! (read in thick German accent)
+        // alert(`The guy is ${`some goon named ${name}`}.`);
+        let isGreater = 4 > 1;
+        // alert(isGreater);
+    </script>
+    <button id="greet">Press me</button>
+    <!-- <script>
+        const button = document.querySelector("button");
+
+        function greet() {
+            const name = prompt("What is your name?");
+            alert(`Hello ${name}, nice to see you!`);
+        }
+
+        document.getElementById("greet").addEventListener("click", greet);
+    </script> -->
+    <div class="lil-break"></div>
+    <h2>Username</h2>
+    <p id="username-status">Username undefined</p>
+    <button id="username">Update username</button>
+    <script>
+        const button = document.querySelector("button");
+
+        function updateUsername() {
+            let newUsername = prompt("Enter your new username");
+            document.getElementById("username-status").innerHTML = `Your username has been updated to ${newUsername} [length: ${newUsername.length}]`;
+        }
+
+        document.getElementById("username").addEventListener("click", updateUsername);
+    </script>
 </body>
 </html>

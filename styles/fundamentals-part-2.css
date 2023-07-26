@@ -7,3 +7,13 @@
     color: #264653;
     font-family: 'Roboto', sans-serif;
 }
+
+.lil-break {
+    border: 2px solid lightgrey;
+    margin: 16px 0px;
+}
+
+button {
+    padding: 4px 16px;
+    font-weight: bolder;
+}
