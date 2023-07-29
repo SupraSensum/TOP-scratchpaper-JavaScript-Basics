@@ -43,7 +43,7 @@ function multiply (a, b) {
 }
 
 function capitalize (someString) {
-    return someString.toUpperCase();
+    return someString.slice(0, 1).toUpperCase() + someString.slice(1);
 }
 
 function lastLetter (someString) {
