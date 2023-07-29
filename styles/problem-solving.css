@@ -26,7 +26,6 @@ footer {
     padding: 32px 16px;
     flex: 1 0 auto;
     flex-direction: column;
-    gap: 8px;
 }
 
 header {
@@ -35,6 +34,21 @@ header {
 
 footer {
     flex: 0 1 auto;
+    gap: 8px;
+}
+
+a {
+    /* text-decoration: none; */
+}
+
+ul,
+ol {
+    /* list-style-type: none; */
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    font-weight: bold;
+    padding-left: 20%;
 }
 
 .content-container {
@@ -55,24 +69,15 @@ footer {
     flex: 1 1 auto;
     display: flex;
     flex-direction: column;
-    gap: 32px;
 }
 
-.content-container .title {
+.content-container > * > .title {
     text-align: center;
-    padding: 32px 16px;
+    padding: 16px 16px;
+    border-bottom: none;
 }
 
-a {
-    /* text-decoration: none; */
-}
-
-ul,
-ol {
-    /* list-style-type: none; */
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    font-weight: bold;
-    padding-left: 20%;
+.content > * {
+    border-bottom: 2px solid #e9e6e4;
+    padding: 16px 16px;
 }
