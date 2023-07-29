@@ -112,3 +112,58 @@
         return result;
     }
 </script> -->
+
+<!-- Blindly creating a welcome function that changes based on age
+<script>
+    let age = prompt("Enter age");
+    
+    // // This is the most compact form. Next, we'll expand it a little
+    // let welcome = age >= 18 ?
+        // () => alert("Welcome, good sir") :
+        // () => alert("Hi, kid");
+
+    // // Expanded arrow function to function expression (anon func?)
+    // let welcome = age >= 18 ?
+    //     function () { alert("Welcome, good sir") } :
+    //     function () { alert("Hi, kid") } ;
+
+    // // This was my first blind attempt. Seems assigning a value to a variable using conditional 'if' can only be done via ternary operators
+    // let welcome = if (age >= 18) {
+    //     function () {
+    //         alert("Welcome, good sir");
+    //     }
+    // } else {
+    //     function () { alert("Hi, kid");
+    // }
+
+    // // Here's how to do it correctly
+    // let welcome;
+
+    // if (age >= 18) {
+    //     welcome = function () {
+    //         alert("Welcome, good sir");
+    //     }
+    // } else {
+    //     welcome = function () {
+    //         alert("Hi, kid");
+    //     }
+    // }
+    
+    welcome();
+</script> -->
+
+<!-- Completing this task: https://javascript.info/arrow-functions-basics#rewrite-with-arrow-functions
+<script>
+    function ask(question, yes, no) {
+        if (confirm(question)) yes();
+        else no();
+    }
+
+    ask(
+        "Do you agree?",
+        // function() { alert("You agreed."); },
+        () => alert("You agreed."),
+        // (function() { alert("You canceled the execution."); })
+        () => alert("You canceled the execution.")
+    );
+</script> -->
