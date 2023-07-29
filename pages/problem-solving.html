@@ -57,6 +57,9 @@
                     function fizzBuzz() {
                         let result = '';
                         let userInputCeiling = 9999;
+                        let fizzCount = 0;
+                        let buzzCount = 0;
+                        let fizzBuzzCount = 0;
                         userInput = prompt(`Gimme a numbah (up to ${userInputCeiling})`);
 
                         // Shorten numbers that are too long
@@ -71,11 +74,28 @@
                             if (i % 3 === 0 || i % 5 === 0) {
                                 i % 3 === 0 ? result += 'Fizz' : undefined;
                                 i % 5 === 0 ? result += 'Buzz' : undefined;
+                                switch (result) {
+                                    case 'Fizz':
+                                        fizzCount++;
+                                        break;
+                                    case 'Buzz':
+                                        buzzCount++;
+                                        break;
+                                    case 'FizzBuzz':
+                                        fizzBuzzCount++;
+                                        break;
+                                    default:
+                                        console.error("IDK WTF U DUN DID");
+                                }
                             } else {
                                 result = i;
                             }
                             console.log(result);
                         }
+
+                        console.info(`fizzCount: ${fizzCount}`);
+                        console.info(`buzzCount: ${buzzCount}`);
+                        console.info(`fizzBuzzCount: ${fizzBuzzCount}`);
                     }
                  </script>
             </div>
