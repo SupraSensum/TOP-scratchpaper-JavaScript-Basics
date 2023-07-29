@@ -27,10 +27,48 @@
         <div class="content">
             <div class="title">
                 <h3>Fizzbuzz</h3>
-                <p>First attempt</p>
+                <p>First blind attempt</p>
             </div>
             <div id="fizzbuzz-first-attempt">
-                placeholder
+                <button id="fizzbuzz-first-attempt-button" type="submit">RUN</button>
+                <!-- Planning: -->
+                <!-- 
+                    let result = '';
+
+                    userInput = prompt("Gimme a numbah");
+
+                    print each number up to input value
+                    for i = 1; i <= userInput; i++
+                        i % 3 = 0 ? result += 'Fizz' :
+                    
+                    print the number UNLESS it meets one of the following 3 criteria
+
+                    print 'Fizz' for any multiple of 3
+
+                    print 'Buzz' for any multiple of 5
+
+                    print 'FizzBuzz' for any multiple of both
+                 -->
+
+                 <script>
+                    document.getElementById("fizzbuzz-first-attempt-button").addEventListener("click", fizzBuzz);
+
+                    function fizzBuzz() {
+                        let result = '';
+                        userInput = Number(prompt("Gimme a numbah"));
+
+                        for (i = 1; i <= userInput; i++) {
+                            result = '';
+                            if (i % 3 === 0 || i % 5 === 0) {
+                                i % 3 === 0 ? result += 'Fizz' : undefined;
+                                i % 5 === 0 ? result += 'Buzz' : undefined;
+                            } else {
+                                result = i;
+                            }
+                            console.log(result);
+                        }
+                    }
+                 </script>
             </div>
         </div>
     </div>

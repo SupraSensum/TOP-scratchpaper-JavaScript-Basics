@@ -81,3 +81,11 @@ ol {
     border-bottom: 2px solid #e9e6e4;
     padding: 16px 16px;
 }
+
+.content > * > button {
+    padding: 4px 16px;
+    font-weight: bold;
+    width: 100%;
+    background-color: #f7f4f3;
+    border-radius: 4px;
+}
