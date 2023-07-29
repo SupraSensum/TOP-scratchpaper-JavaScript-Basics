@@ -55,7 +55,15 @@
 
                     function fizzBuzz() {
                         let result = '';
-                        userInput = Number(prompt("Gimme a numbah"));
+                        let userInputCeiling = 9999;
+                        userInput = prompt(`Gimme a numbah (up to ${userInputCeiling})`);
+
+                        // Shorten numbers that are too long
+                        // Already crashed my browser trying to computer some number with an obscene length lol
+                        if (Number(userInput) > userInputCeiling) {
+                            userInput = userInputCeiling;
+                            console.warn(`userInput > ${userInputCeiling}. Corrected`);
+                        }
 
                         for (i = 1; i <= userInput; i++) {
                             result = '';
