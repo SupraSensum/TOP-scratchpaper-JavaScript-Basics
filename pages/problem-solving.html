@@ -26,7 +26,7 @@
         </div>
         <div class="content">
             <div class="title">
-                <h3>Fizzbuzz</h3>
+                <h3>FizzBuzz #1</h3>
                 <p>First blind attempt</p>
                 <p>Added quite a few bells and whistles... hah</p>
             </div>
@@ -101,10 +101,61 @@
                  </script>
             </div>
             <div class="title">
-                <h3>Fizzbuzz</h3>
+                <h3>FizzBuzz #2</h3>
                 <p>Second blind attempt...</p>
                 <p>The goal is just to use functions instead of those ternary operators... hopefully I can keep it simple</p>
             </div>
+            <div id="fizzbuzz-second-attempt">
+                <button id="fizzbuzz-first-attempt-button" type="submit">RUN</button>
+                <script>
+                   document.getElementById("fizzbuzz-second-attempt-button").addEventListener("click", fizzBuzz);
+
+                   function fizzBuzz() {
+                       let result = '';
+                       let userInputCeiling = 9999;
+                       let fizzCount = 0;
+                       let buzzCount = 0;
+                       let fizzBuzzCount = 0;
+                       userInput = prompt(`Gimme a numbah (up to ${userInputCeiling})`);
+
+                       // Shorten numbers that are too long
+                       // Already crashed my browser trying to computer some number with an obscene length lol
+                       if (Number(userInput) > userInputCeiling) {
+                           userInput = userInputCeiling;
+                           console.warn(`userInput > ${userInputCeiling}. Corrected`);
+                       }
+
+                       for (i = 1; i <= userInput; i++) {
+                           result = '';
+                           if (i % 3 === 0 || i % 5 === 0) {
+                               i % 3 === 0 ? result += 'Fizz' : undefined;
+                               i % 5 === 0 ? result += 'Buzz' : undefined;
+                               switch (result) {
+                                   case 'Fizz':
+                                       fizzCount++;
+                                       break;
+                                   case 'Buzz':
+                                       buzzCount++;
+                                       break;
+                                   case 'FizzBuzz':
+                                       fizzBuzzCount++;
+                                       break;
+                                   default:
+                                       console.error("IDK WTF U DUN DID");
+                               }
+                           } else {
+                               result = i;
+                           }
+                           console.log(result);
+                       }
+
+                       console.info(`fizzCount: ${fizzCount}`);
+                       console.info(`buzzCount: ${buzzCount}`);
+                       console.info(`fizzBuzzCount: ${fizzBuzzCount}`);
+                       alert(`fizzCount: ${fizzCount} - buzzCount: ${buzzCount} - fizzBuzzCount: ${fizzBuzzCount}`);
+                   }
+                </script>
+                </div>
         </div>
     </div>
     <footer>
