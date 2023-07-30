@@ -11,7 +11,7 @@
 <body>
     <header>
         <h1>JavaScript Basics Scratchpaper:</h1>
-        <h1>Problem Soliving</h1>
+        <h1><a href="https://www.theodinproject.com/lessons/foundations-problem-solving">Problem Soliving</a></h1>
     </header>
     <div class="content-container">
         <div class="sidebar">
@@ -20,7 +20,9 @@
             </div>
             <div class="page-nav-link">
                 <ol>
-                    <li><a href="#fizzbuzz-first-attempt">Fizzbuzz: First attempt</a></li>
+                    <li><a href="#fizzbuzz-first-attempt">Fizzbuzz #1</a></li>
+                    <li><a href="#fizzbuzz-second-attempt">Fizzbuzz #2</a></li>
+                    <li><a href="#fizzbuzz-third-attempt">Fizzbuzz #3</a></li>
                 </ol>
             </div>
         </div>
@@ -171,7 +173,23 @@
             </div>
             <div id="fizzbuzz-third-attempt">
                 <button id="fizzbuzz-third-attempt-button" type="submit">RUN</button>
-                
+                <script>
+                    document.getElementById("fizzbuzz-third-attempt-button").addEventListener("click", fizzBuzz);
+                    function fizzBuzz () {
+                        let userInput = prompt("Enter a number");
+                        for (i = 1; i <= userInput; i++) {
+                            if (i % 3 === 0 && i % 5 === 0) {
+                                console.log("FizzBuzz");
+                            } else if (i % 3 === 0) {
+                                console.log("Fizz");
+                            } else if (i % 5 === 0) {
+                                console.log("Buzz");
+                            } else {
+                                console.log(i);
+                            }
+                        }
+                    }
+                </script>
             </div>
         </div>
     </div>
