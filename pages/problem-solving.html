@@ -106,54 +106,62 @@
                 <p>The goal is just to use functions instead of those ternary operators... hopefully I can keep it simple</p>
             </div>
             <div id="fizzbuzz-second-attempt">
-                <button id="fizzbuzz-first-attempt-button" type="submit">RUN</button>
+                <button id="fizzbuzz-second-attempt-button" type="submit">RUN</button>
                 <script>
                    document.getElementById("fizzbuzz-second-attempt-button").addEventListener("click", fizzBuzz);
 
                    function fizzBuzz() {
-                       let result = '';
-                       let userInputCeiling = 9999;
-                       let fizzCount = 0;
-                       let buzzCount = 0;
-                       let fizzBuzzCount = 0;
-                       userInput = prompt(`Gimme a numbah (up to ${userInputCeiling})`);
+                        let result = '';
+                        let userInputCeiling = 9999;
+                        let fizzCount = 0;
+                        let buzzCount = 0;
+                        let fizzBuzzCount = 0;
+                        userInput = prompt(`Gimme a numbah (up to ${userInputCeiling})`);
 
-                       // Shorten numbers that are too long
-                       // Already crashed my browser trying to computer some number with an obscene length lol
-                       if (Number(userInput) > userInputCeiling) {
-                           userInput = userInputCeiling;
-                           console.warn(`userInput > ${userInputCeiling}. Corrected`);
-                       }
+                        // Sanitize input (just a teensy bit)
+                        // Shorten numbers that are too long
+                        // Already crashed my browser trying to computer some number with an obscene length lol
+                        // The goal with this one is to create more functions for improved readability
+                        // Decided "nah, let's get on with the lesson"
+                        if (Number(userInput) > userInputCeiling) {
+                            userInput = userInputCeiling;
+                            console.warn(`userInput > ${userInputCeiling}. Corrected`);
+                        }
 
-                       for (i = 1; i <= userInput; i++) {
-                           result = '';
-                           if (i % 3 === 0 || i % 5 === 0) {
-                               i % 3 === 0 ? result += 'Fizz' : undefined;
-                               i % 5 === 0 ? result += 'Buzz' : undefined;
-                               switch (result) {
-                                   case 'Fizz':
-                                       fizzCount++;
-                                       break;
-                                   case 'Buzz':
-                                       buzzCount++;
-                                       break;
-                                   case 'FizzBuzz':
-                                       fizzBuzzCount++;
-                                       break;
-                                   default:
-                                       console.error("IDK WTF U DUN DID");
-                               }
-                           } else {
-                               result = i;
-                           }
-                           console.log(result);
-                       }
+                        for (i = 1; i <= userInput; i++) {
+                            result = ''; // clear the result before the next run
 
-                       console.info(`fizzCount: ${fizzCount}`);
-                       console.info(`buzzCount: ${buzzCount}`);
-                       console.info(`fizzBuzzCount: ${fizzBuzzCount}`);
-                       alert(`fizzCount: ${fizzCount} - buzzCount: ${buzzCount} - fizzBuzzCount: ${fizzBuzzCount}`);
-                   }
+                            // Check if divisible 
+                            if (i % 3 === 0 || i % 5 === 0) { // if either is divisible by 5 or 3
+                                i % 3 === 0 ? result += 'Fizz' : undefined; // concat 'Fizz' to result
+                                i % 5 === 0 ? result += 'Buzz' : undefined; // concat 'Buzz' to result
+                            }
+
+                            // Keep track of each Fizz, Buzz & FizzBuzz
+                            switch (result) {
+                                case 'Fizz':
+                                    fizzCount++;
+                                    break;
+                                case 'Buzz':
+                                    buzzCount++;
+                                    break;
+                                case 'FizzBuzz':
+                                    fizzBuzzCount++;
+                                    break;
+                                default:
+                                    // console.error("IDK WTF U DUN DID");
+                                    result = i;
+                            }
+
+                            console.log(result);
+                        }
+
+                        // Print metrics
+                        console.info(`fizzCount: ${fizzCount}`);
+                        console.info(`buzzCount: ${buzzCount}`);
+                        console.info(`fizzBuzzCount: ${fizzBuzzCount}`);
+                        alert(`fizzCount: ${fizzCount} - buzzCount: ${buzzCount} - fizzBuzzCount: ${fizzBuzzCount}`);
+                    }
                 </script>
                 </div>
         </div>
