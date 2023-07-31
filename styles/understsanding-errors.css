@@ -16,6 +16,7 @@ code {
     background-color: #f7f7f7;
     border: 1px solid #374151;
     border-radius: 4px;
+    flex: inherit;
 }
 
 body {
@@ -85,7 +86,21 @@ ol {
     text-align: center;
     padding: 16px 16px;
     border-bottom: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
+
+/* Begin styles for <p> elements under each content's title */
+.content-container > * > .title > p {
+    background-color: #f7f4f3;
+    border-radius: 8px;
+    border: 1px solid #e9e6e4;
+    padding: 16px 32px;
+    margin-top: 16px;
+}
+/* End styles for <p> elements */
 
 .content > * {
     border-bottom: 2px solid #e9e6e4;
