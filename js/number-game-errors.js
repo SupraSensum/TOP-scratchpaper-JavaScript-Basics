@@ -1,4 +1,4 @@
-let randomNumber = Math.floor(Math.random()) + 1;
+let randomNumber = Math.floor(Math.random() * 100) + 1;
 
 const guesses = document.querySelector('.guesses');
 const lastResult = document.querySelector('.lastResult');
@@ -46,7 +46,7 @@ function setGameOver() {
     guessSubmit.disabled = true;
     resetButton = document.createElement('button');
     resetButton.textContent = 'Start new game';
-    document.body.appendChild(resetButton);
+    document.getElementById("number-game-errors-body").appendChild(resetButton);
     resetButton.addEventListener('click', resetGame);
 }
 
@@ -66,5 +66,5 @@ function resetGame() {
 
     lastResult.style.backgroundColor = 'white';
 
-    randomNumber = Math.floor(Math.random()) + 1;
+    randomNumber = Math.floor(Math.random() * 100) + 1;
 }
