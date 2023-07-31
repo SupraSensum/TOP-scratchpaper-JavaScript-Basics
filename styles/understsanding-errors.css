@@ -9,6 +9,7 @@
     box-sizing: border-box;
     color: #264653;
     font-family: 'Roboto', sans-serif;
+    word-wrap: break-word; /* This is only here to prevent the <code> elements in the Navigation panel from bleeding outside their containers */
 }
 
 code {
