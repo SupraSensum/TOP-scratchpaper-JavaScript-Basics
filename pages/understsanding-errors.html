@@ -33,7 +33,21 @@
                 <p>Does <code>console.error();</code> really <a href="https://www.theodinproject.com/lessons/foundations-understanding-errors#errors-vs-warnings">stop the execution of your program or whatever process you may be attempting to run and prevent further action</a>?</p>
             </div>
             <div id="#">
-                placeholder
+                <p>check my <code>&lt;script&gt;</code> to see what I'm up to (hint: no good)</p>
+                <button id="console-error-vs-console-warn-button">RUN</button>
+                <script>
+                    const button = document.getElementById("console-error-vs-console-warn-button");
+
+                    button.addEventListener("click", testConsoleError);
+
+                    function testConsoleError() {
+                        alert("Some text BEFORE the console.warn() command");
+                        console.warn("Test warning");
+                        alert("Some text BEFORE the console.error() command");
+                        console.error("test error");
+                        alert("If you see me, console.error doesn't do what TOP lead me to believe it does. See here: https://www.theodinproject.com/lessons/foundations-understanding-errors#errors-vs-warnings");
+                    }
+                </script>
             </div>
         </div>
     </div>
