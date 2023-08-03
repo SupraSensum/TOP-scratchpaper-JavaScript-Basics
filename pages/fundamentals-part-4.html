@@ -81,6 +81,10 @@
                randomVehicleList.forEach((value, index) => {
                   document.getElementById("demo-5-para").innerHTML += `<li>${value}</li>`;
                });
+               // Practice for...of loop
+               for (const vehicleBrandName of randomVehicleList) {
+                  console.log(vehicleBrandName);
+               }
 
                // Does an array of functions work? Yes it does!
                // Here's something unnecessarily complicated just for practice
@@ -97,6 +101,45 @@
                for (i = 0; i < performBatteryOfMaths.length; i++) {
                   console.log(performBatteryOfMaths[i](Number(randomNumber)));
                }
+            </script>
+         </div>
+         <div class="title" id="loop-demo-1">
+            <h3>Loop Demo 1</h3>
+         </div>
+         <div>
+            <button id="buttonDemoMDN">BUTTON</button>
+            <canvas id="canvesDemoMDN"></canvas>
+            <script>
+               const btn = document.querySelector("#buttonDemoMDN");
+               const canvas = document.querySelector("#canvesDemoMDN");
+               const ctx = canvas.getContext("2d");
+
+               document.addEventListener("DOMContentLoaded", () => {
+                  canvas.width = document.documentElement.clientWidth;
+                  canvas.height = document.documentElement.clientHeight;
+               });
+
+               function random(number) {
+                  return Math.floor(Math.random() * number);
+               }
+
+               function draw() {
+                  ctx.clearRect(0, 0, canvas.width, canvas.height);
+                  for (let i = 0; i < 100; i++) {
+                     ctx.beginPath();
+                     ctx.fillStyle = "rgba(255,0,0,0.5)";
+                     ctx.arc(
+                        random(canvas.width),
+                        random(canvas.height),
+                        random(50),
+                        0,
+                        2 * Math.PI,
+                     );
+                     ctx.fill();
+                  }
+               }
+
+               btn.addEventListener("click", draw);
             </script>
          </div>
       </div>
