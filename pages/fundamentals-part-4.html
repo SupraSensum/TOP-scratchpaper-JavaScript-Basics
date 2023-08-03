@@ -92,9 +92,10 @@
                   someNumber => {return someNumber ** 2;}, // Square
                   someNumber => {return someNumber ** someNumber;} // Raise to power of self
                ];
-               userInput = prompt("Enter a number, then check console");
+               randomNumber = Math.floor(Math.random() * 1000) + 1; // From 1 - 1000
+               console.log(`randomNumber: ${randomNumber}`);
                for (i = 0; i < performBatteryOfMaths.length; i++) {
-                  console.log(performBatteryOfMaths[i](Number(userInput)));
+                  console.log(performBatteryOfMaths[i](Number(randomNumber)));
                }
             </script>
          </div>
