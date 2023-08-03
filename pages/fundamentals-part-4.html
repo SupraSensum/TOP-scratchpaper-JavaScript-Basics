@@ -65,18 +65,20 @@
                // This is a deliberately inefficient approach for the sake of practice
                const randomVehicleList = [];
                let sizeOfRandomVehicleList = 1000;
+               let vehicleCatalog = [
+                  'BMW',
+                  'Volvo',
+                  'Honda',
+                  'Saab',
+                  'Toyota'
+               ];
+               vehicleCatalog.push('Lincoln');
+               vehicleCatalog.push('Ferrari');
                for (i = 0; i < sizeOfRandomVehicleList; i++) {
-                  let randomIndex = Math.floor(Math.random() * 1000) % 5;
-                  let vehicleCatalog = [
-                     'BMW',
-                     'Volvo',
-                     'Honda',
-                     'Saab',
-                     'Toyota'
-                  ];
-                  randomVehicleList[i] = vehicleCatalog[randomIndex];
+                  let randomIndex = Math.floor(Math.random() * 1000) % vehicleCatalog.length;
+                  randomVehicleList[i] = `${randomIndex}: ${vehicleCatalog[randomIndex]}`;
                }
-               randomVehicleList.forEach(value => {
+               randomVehicleList.forEach((value, index) => {
                   document.getElementById("demo-5-para").innerHTML += `<li>${value}</li>`;
                });
             </script>
