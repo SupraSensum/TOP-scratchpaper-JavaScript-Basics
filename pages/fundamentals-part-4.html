@@ -35,6 +35,8 @@
             <p id="demo-3-para">PLACEHOLDER</p>
             <strong>Using the .toString method on the array:</strong>
             <p id="demo-4-para">PLACEHOLDER</p>
+            <strong>Here's an object array</strong>
+            <ul id="demo-5-para"></ul>
             <strong>Check out the script below me to see other ways of declaring an array</strong>
             <script>
                // Array delcaration method #1
@@ -58,6 +60,25 @@
                document.getElementById("demo-3-para").innerHTML = `cars[0]: ${cars[0]}`;
 
                document.getElementById("demo-4-para").innerHTML = cars.toString();
+
+               // Populate an array with randomly selected vehicle brands
+               // This is a deliberately inefficient approach for the sake of practice
+               const randomVehicleList = [];
+               let sizeOfRandomVehicleList = 15;
+               for (i = 0; i < sizeOfRandomVehicleList; i++) {
+                  let randomIndex = Math.floor(Math.random() * 1000) % 5;
+                  let vehicleCatalog = [
+                     'BMW',
+                     'Volvo',
+                     'Honda',
+                     'Saab',
+                     'Toyota'
+                  ];
+                  randomVehicleList[i] = vehicleCatalog[randomIndex];
+               }
+               for (i = 0; i < sizeOfRandomVehicleList; i++) {
+                  document.getElementById("demo-5-para").innerHTML += `<li>${randomVehicleList[i]}</li>`;
+               }
             </script>
          </div>
       </div>
