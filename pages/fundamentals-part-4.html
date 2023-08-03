@@ -33,7 +33,9 @@
             <p id="demo-1-para">PLACEHOLDER</p>
             <p id="demo-2-para">PLACEHOLDER</p>
             <p id="demo-3-para">PLACEHOLDER</p>
-            <p>Check out the script below me to see other ways of declaring an array</p>
+            <strong>Using the .toString method on the array:</strong>
+            <p id="demo-4-para">PLACEHOLDER</p>
+            <strong>Check out the script below me to see other ways of declaring an array</strong>
             <script>
                // Array delcaration method #1
                const cars2 = ['Saab', 'Volvo', 'BMW'];
@@ -54,6 +56,8 @@
                document.getElementById("demo-2-para").innerHTML = names;
 
                document.getElementById("demo-3-para").innerHTML = `cars[0]: ${cars[0]}`;
+
+               document.getElementById("demo-4-para").innerHTML = cars.toString();
             </script>
          </div>
       </div>
