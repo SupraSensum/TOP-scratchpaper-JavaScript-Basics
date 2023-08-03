@@ -64,7 +64,7 @@
                // Populate an array with randomly selected vehicle brands
                // This is a deliberately inefficient approach for the sake of practice
                const randomVehicleList = [];
-               let sizeOfRandomVehicleList = 1000;
+               let sizeOfRandomVehicleList = 100;
                let vehicleCatalog = [
                   'BMW',
                   'Volvo',
@@ -81,6 +81,13 @@
                randomVehicleList.forEach((value, index) => {
                   document.getElementById("demo-5-para").innerHTML += `<li>${value}</li>`;
                });
+
+               // Does an array of functions work?
+               const performBatteryOfMaths = [];
+               performBatteryOfMaths.push(someNumber => {
+                  return someNumber *= 2;
+               });
+               console.log(performBatteryOfMaths[0](4));
             </script>
          </div>
       </div>
