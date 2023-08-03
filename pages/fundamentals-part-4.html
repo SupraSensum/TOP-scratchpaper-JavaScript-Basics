@@ -82,12 +82,20 @@
                   document.getElementById("demo-5-para").innerHTML += `<li>${value}</li>`;
                });
 
-               // Does an array of functions work?
-               const performBatteryOfMaths = [];
-               performBatteryOfMaths.push(someNumber => {
-                  return someNumber *= 2;
-               });
-               console.log(performBatteryOfMaths[0](4));
+               // Does an array of functions work? Yes it does!
+               // Here's something unnecessarily complicated just for practice
+               const performBatteryOfMaths = [
+                  someNumber => {return someNumber *= 2;}, // Multiply by 2
+                  someNumber => {return someNumber /= 2;}, // Divide by 2
+                  someNumber => {return someNumber += 1;}, // Add 1
+                  someNumber => {return someNumber -= 1;}, // Subtract 1
+                  someNumber => {return someNumber ** 2;}, // Square
+                  someNumber => {return someNumber ** someNumber;} // Raise to power of self
+               ];
+               userInput = prompt("Enter a number, then check console");
+               for (i = 0; i < performBatteryOfMaths.length; i++) {
+                  console.log(performBatteryOfMaths[i](Number(userInput)));
+               }
             </script>
          </div>
       </div>
