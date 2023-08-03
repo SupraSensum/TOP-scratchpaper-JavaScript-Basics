@@ -75,9 +75,10 @@
                      'Toyota'
                   ];
                   randomVehicleList[i] = vehicleCatalog[randomIndex];
-                  document.getElementById("demo-5-para").innerHTML += 
-                     `<li>${randomVehicleList[i]}</li>`;
                }
+               randomVehicleList.forEach(value => {
+                  document.getElementById("demo-5-para").innerHTML += `<li>${randomVehicleList[i]}</li>`;
+               });
             </script>
          </div>
       </div>
