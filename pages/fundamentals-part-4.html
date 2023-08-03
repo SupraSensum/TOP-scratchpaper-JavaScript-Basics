@@ -15,25 +15,42 @@
    <div class="content-container">
       <div class="sidebar">
          <div class="title">
-               <h3>Navigation</h3>
+            <h3>Navigation</h3>
          </div>
          <div class="page-nav-link">
                <ol>
-               <li><a href="#">Placeholder</a></li>
-               <li><a href="#">Placeholder</a></li>
-               <li><a href="#">Placeholder</a></li>
+                  <li><a href="#array-demo-1">Array Demo 1</a></li>
+                  <li><a href="#">Placeholder</a></li>
+                  <li><a href="#">Placeholder</a></li>
                </ol>
          </div>
       </div>
       <div class="content">
-         <div class="title">
-            <h3>Array Demo</h3>
+         <div class="title" id="array-demo-1">
+            <h3>Array Demo 1</h3>
          </div>
          <div>
             <p id="demo-1-para">PLACEHOLDER</p>
+            <p id="demo-2-para">PLACEHOLDER</p>
+            <p>Check out the script below me to see other ways of declaring an array</p>
             <script>
-               const cars = ['Saab', 'Volvo', 'BMW'];
+               // Array delcaration method #1
+               const cars2 = ['Saab', 'Volvo', 'BMW'];
+               // Array delcaration method #2
+               const cars1 = [
+                  'Saab',
+                  'Volvo',
+                  'BMW'
+               ];
+               // Array delcaration method #3
+               const cars = [];
+               cars[0] = 'Saab';
+               cars[1] = 'Volvo';
+               cars[2] = 'BMW';
                document.getElementById("demo-1-para").innerHTML = cars;
+
+               const names = ['Patrick', 'David', 'Rafael'];
+               document.getElementById("demo-2-para").innerHTML = names;
             </script>
          </div>
       </div>
