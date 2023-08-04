@@ -10,7 +10,7 @@
 </head>
 <body>
    <header>
-      <h1><a href="https://www.theodinproject.com/lessons/foundations-understanding-errors">Understanding Errors</a></h1>
+      <h1><a href="https://www.theodinproject.com/lessons/foundations-fundamentals-part-4">Fundamentals Part 4</a></h1>
    </header>
    <div class="content-container">
       <div class="sidebar">
@@ -20,8 +20,8 @@
          <div class="page-nav-link">
                <ol>
                   <li><a href="#array-demo-1">Array Demo 1</a></li>
-                  <li><a href="#">Placeholder</a></li>
-                  <li><a href="#">Placeholder</a></li>
+                  <li><a href="#loop-demo-1">Loop Demo 1</a></li>
+                  <li><a href="#continue-demo">Continue Demo</a></li>
                </ol>
          </div>
       </div>
@@ -74,7 +74,7 @@
                ];
                vehicleCatalog.push('Lincoln');
                vehicleCatalog.push('Ferrari');
-               for (i = 0; i < sizeOfRandomVehicleList; i++) {
+               for (let i = 0; i < sizeOfRandomVehicleList; i++) {
                   let randomIndex = Math.floor(Math.random() * 1000) % vehicleCatalog.length;
                   randomVehicleList[i] = `${randomIndex}: ${vehicleCatalog[randomIndex]}`;
                }
@@ -98,7 +98,7 @@
                ];
                randomNumber = Math.floor(Math.random() * 1000) + 1; // From 1 - 1000
                console.log(`randomNumber: ${randomNumber}`);
-               for (i = 0; i < performBatteryOfMaths.length; i++) {
+               for (let i = 0; i < performBatteryOfMaths.length; i++) {
                   console.log(performBatteryOfMaths[i](Number(randomNumber)));
                }
             </script>
@@ -140,6 +140,53 @@
                }
 
                btn.addEventListener("click", draw);
+            </script>
+         </div>
+         <div class="title" id="continue-demo">
+            <h3>Using 'continue' to skip an iteration</h3>
+         </div>
+         <div id="continue-demo-content">
+            <label for="continueDemoNumber">Enter a number:</label>
+            <input id="continueDemoNumber" type="number">
+            <button id="continueDemoButton">Generate integer squares</button>
+            <p id="continueDemoOutput">Output:</p>
+            <script>
+               // Return only numbers that are squares of intergers (whole numbers)
+               // Brainstorm:
+               //    1's square is 1
+               //    2's square is notAnInteger
+               //    3's square is notAnInteger
+               //    4's square is 2
+               //    5...
+               //    6...
+               //    7...
+               //    8...
+               //    9's square is 3
+               //    10...15
+               //    16's square is 4
+               //    ... and so on
+               // As i++, ask "is sqrt(i) an int?"
+               //    if sqrt(i) is an int
+               //       return i
+               //    else
+               //       continue
+               const continueDemoPara = document.querySelector("#continueDemoOutput");
+               const continueDemoInput = document.querySelector("#continueDemoNumber");
+               const continueDemoBtn = document.querySelector("#continueDemoButton");
+
+               continueDemoBtn.addEventListener("click", () => {
+                  continueDemoPara.textContent = "Output: ";
+                  const continueDemoUserInput = continueDemoInput.value;
+                  continueDemoInput.value = "";
+                  continueDemoInput.focus();
+
+                  for (let i = 1; i <= continueDemoUserInput; i++) {
+                     let sqRoot = Math.sqrt(i);
+                     if (Math.floor(sqRoot) === sqRoot) {
+                        continueDemoPara.textContent += `${sqRoot} `;
+                     }
+                  }
+               });
             </script>
          </div>
       </div>
