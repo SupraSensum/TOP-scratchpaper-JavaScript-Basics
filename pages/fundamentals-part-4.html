@@ -27,6 +27,7 @@
                   <li><a href="#MDN-loops-1-demo">MDN Loops 1</a></li>
                   <li><a href="#MDN-loops-2-demo">MDN Loops 2</a></li>
                   <li><a href="#MDN-loops-3-demo">MDN Loops 3</a></li>
+                  <!-- <li><a href="#assignment">Fundamentals Part 4: Assignment</a></li> -->
                </ol>
          </div>
       </div>
@@ -312,8 +313,43 @@
             <h3><a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Test_your_skills:_Loops">MDN Loops 3</a></h3>
          </div>
          <div id="MDN-loops-3-demo-content">
-            placeholder
+            <section id="MDN-loops-3-section">
+            </section>
+            <script>
+               let i = 500;
+               const loops3Para = document.createElement('p');
+
+               function isPrime(num) {
+                  for(let i = 2; i < num; i++) {
+                     if(num % i === 0) {
+                        return false;
+                     }
+                  }
+
+                  return true;
+               }
+
+
+               // Add your code here
+               while (i >= 2) {
+                  if (isPrime(i)) {
+                     loops3Para.textContent += `${i} `;
+                  }
+                  i--;
+               }
+
+
+               // Don't edit the code below here!
+               const loops3Section = document.querySelector('#MDN-loops-3-section');
+               loops3Section.appendChild(loops3Para);
+            </script>
          </div>
+         <!-- <div class="title" id="assignment">
+            <h3><a href="https://www.theodinproject.com/lessons/foundations-fundamentals-part-4#assignment">Fundamentals Part 4: Assignment</a></h3>
+         </div>
+         <div>
+
+         </div> -->
       </div>
    </div>
    <footer>
