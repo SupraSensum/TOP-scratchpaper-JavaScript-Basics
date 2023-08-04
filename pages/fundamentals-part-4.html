@@ -22,6 +22,8 @@
                   <li><a href="#array-demo-1">Array Demo 1</a></li>
                   <li><a href="#loop-demo-1">Loop Demo 1</a></li>
                   <li><a href="#continue-demo">Continue Demo</a></li>
+                  <li><a href="#launch-countdown-demo">Launch Countdown</a></li>
+                  <li><a href="#guest-list-demo">Guest List</a></li>
                </ol>
          </div>
       </div>
@@ -189,6 +191,64 @@
                      }
                   }
                });
+            </script>
+         </div>
+         <div class="title" id="launch-countdown-demo">
+            <h3><a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Looping_code#active_learning_launch_countdown">Launch Countdown</a></h3>
+         </div>
+         <div id="launch-countdown-demo-content">
+            <div id="launch-countdown-output"></div>
+            <script>
+               const countdownOutput = document.querySelector("#launch-countdown-output");
+               for (let i = 10; i >= 0; i--) {
+                  const countdownPara = document.createElement('p');
+                  if (i != 10 && i != 0) {
+                     countdownPara.textContent = i;
+                  } else if (i === 10) {
+                     countdownPara.textContent = `Countdown ${i}`;
+                  } else {
+                     countdownPara.textContent = "Blast off!";
+                  }
+                  countdownOutput.appendChild(countdownPara);
+               }
+            </script>
+         </div>
+         <div class="title" id="guest-list-demo">
+            <h3><a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Looping_code#active_learning_filling_in_a_guest_list">Guest List</a></h3>
+         </div>
+         <div id="guest-list-demo-content">
+            <p id="peopleAdmitted"></p>
+            <p id="peopleRefused"></p>
+            <script>
+               // Brainstorm:
+               // 
+               // Two lists that are just string variables?
+               //    1. peopleAllowed
+               //    2. peopleRefused
+               // Looks like instead we'll just have 1 'people' array?
+               //    - Use conditional statement to check if element === :
+               //       1. 'Phil'
+               //       2. 'Lola'
+               //       - If true, peopleRefused.textContent += array element, followed by a comma and a space
+               //       - If false, peopleRefused.textContent += array element, followed by a comma and a space
+               // Slice the final comma and a space from each list
+               const people = ['Chris', 'Anne', 'Colin', 'Terri', 'Phil', 'Lola', 'Sam', 'Kay', 'Bruce'];
+
+               const admitted = document.querySelector('#peopleAdmitted');
+               const refused = document.querySelector('#peopleRefused');
+               admitted.textContent = 'Admit: ';
+               refused.textContent = 'Refuse: ';
+
+               for (const person of people) {
+                  if (person.toLowerCase() !== 'phil' && person.toLowerCase() !== 'lola') {
+                     admitted.textContent += `${person}, `;
+                  } else {
+                     refused.textContent += `${person}, `;
+                  }
+               }
+               
+               admitted.textContent = admitted.textContent.slice(0, -2) + '.';
+               refused.textContent = refused.textContent.slice(0, -2) + '.';
             </script>
          </div>
       </div>
