@@ -258,7 +258,22 @@
             <h3><a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Test_your_skills:_Loops">MDN Loops 1</a></h3>
          </div>
          <div id="MDN-loops-1-demo-content">
-            placeholder
+            <section id="MDN-loops-1-section">
+               placeholder
+            </section>
+            <script>
+               const myArray = ['tomatoes', 'chick peas', 'onions', 'rice', 'black beans'];
+               const list = document.createElement('ul');
+
+               for (const foodItem of myArray) {
+                  const listItem = document.createElement('li');
+                  listItem.innerText = foodItem;
+                  list.appendChild(listItem);
+               }
+
+               const section = document.querySelector('#MDN-loops-1-section');
+               section.appendChild(list);
+            </script>
          </div>
          <div class="title" id="MDN-loops-2-demo">
             <h3><a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Test_your_skills:_Loops">MDN Loops 2</a></h3>
