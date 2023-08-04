@@ -115,8 +115,8 @@
                const ctx = canvas.getContext("2d");
 
                document.addEventListener("DOMContentLoaded", () => {
-                  canvas.width = document.documentElement.clientWidth;
-                  canvas.height = document.documentElement.clientHeight;
+                  canvas.width = window.innerWidth * 0.6;
+                  canvas.height = window.innerHeight * 0.6;
                });
 
                function random(number) {
@@ -125,6 +125,8 @@
 
                function draw() {
                   ctx.clearRect(0, 0, canvas.width, canvas.height);
+                  canvas.width = window.innerWidth * 0.6;
+                  canvas.height = window.innerHeight * 0.6;
                   for (let i = 0; i < 100; i++) {
                      ctx.beginPath();
                      ctx.fillStyle = "rgba(255,0,0,0.5)";
