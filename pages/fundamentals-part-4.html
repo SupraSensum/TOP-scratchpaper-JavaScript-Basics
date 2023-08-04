@@ -259,7 +259,6 @@
          </div>
          <div id="MDN-loops-1-demo-content">
             <section id="MDN-loops-1-section">
-               placeholder
             </section>
             <script>
                const myArray = ['tomatoes', 'chick peas', 'onions', 'rice', 'black beans'];
@@ -279,7 +278,35 @@
             <h3><a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Test_your_skills:_Loops">MDN Loops 2</a></h3>
          </div>
          <div id="MDN-loops-2-demo-content">
-            placeholder
+            <section id="MDN-loops-2-section">
+            </section>
+            <script>
+               const loops2Name = 'Mustafa';
+               const loops2Para = document.createElement('p');
+            
+               const phonebook = [
+                  { loops2Name : 'Chris', loops2Number : '1549' },
+                  { loops2Name : 'Li Kang', loops2Number : '9634' },
+                  { loops2Name : 'Anne', loops2Number : '9065' },
+                  { loops2Name : 'Francesca', loops2Number : '3001' },
+                  { loops2Name : 'Mustafa', loops2Number : '6888' },
+                  { loops2Name : 'Tina', loops2Number : '4312' },
+                  { loops2Name : 'Bert', loops2Number : '7780' },
+                  { loops2Name : 'Jada', loops2Number : '2282' },
+               ]
+            
+               // Add your code here
+               for (i = 0; i < phonebook.length; i++) {
+                  if (phonebook[i].loops2Name.toLowerCase() === loops2Name.toLowerCase()) {
+                     loops2Para.innerText = `${phonebook[i].loops2Name} - ${phonebook[i].loops2Number}`;
+                     break;
+                  }
+               }
+            
+               // Don't edit the code below here!
+               const loops2Section = document.querySelector('#MDN-loops-2-section');
+               loops2Section.appendChild(loops2Para);
+            </script>
          </div>
          <div class="title" id="MDN-loops-3-demo">
             <h3><a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Test_your_skills:_Loops">MDN Loops 3</a></h3>
