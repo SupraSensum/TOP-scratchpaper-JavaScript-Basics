@@ -1,5 +1,9 @@
 // demo 1
 // Let button change color of h1 element text
+// 
+// Ah, yes. Let us reminisce about how I used a for loop to iterate through
+// a node list instead of using the .forEach method. Hah. Lovely
+// 
 
 const theButton = document.querySelector('#demo-button-1');
 const theHeader = document.querySelector('#demo-header-1');
