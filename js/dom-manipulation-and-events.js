@@ -60,3 +60,58 @@ function disableTheButtonIndirectly () {
    theButton2.addEventListener('click', sayHi);
    return;
 }
+
+// demo 3
+// add a button that creates additional elements
+//    make sure each element comes with the .created-from-button class
+// and another button that adds the same class as the header so all elements' colors change at once
+
+const button3ChangeColor = document.querySelector('#demo-button-3-change-color');
+const button3CreateElement = document.querySelector('#demo-button-3-create-element');
+const button3ToggleColorSync = document.querySelector('#demo-button-3-toggle-color-sync');
+const theHeader3 = document.querySelector('#demo-header-3');
+
+button3ChangeColor.addEventListener('click', paintItXXX);
+button3CreateElement.addEventListener('click', demo3CreateElement);
+button3ToggleColorSync.addEventListener('click', toggleColorSync);
+
+function paintItXXX () {
+   const thoseToBePainted = document.querySelectorAll('.change-my-color');
+   for (i = 0; i < thoseToBePainted.length; i++) {
+      switch (thoseToBePainted[i].style.color) {
+         case '':
+            thoseToBePainted[i].style.color = 'red';
+            break;
+         case 'inherit':
+            thoseToBePainted[i].style.color = 'red';
+            break;
+         case 'red':
+            thoseToBePainted[i].style.color = 'inherit';
+            break;
+         default:
+            console.error("There are some color shenanigans goin' on up in heaaaa");
+            break;
+      }
+      if (thoseToBePainted[i].classList.contains('created-from-button') && thoseToBePainted[i].style.color !== theHeader3.style.color) {
+         thoseToBePainted[i].style.color = theHeader3.style.color;
+         console.log('BINGBONG');
+      }
+   }
+   return;
+}
+
+function demo3CreateElement () {
+   const quickParaElement = document.createElement('p');
+   quickParaElement.setAttribute('class', 'created-from-button');
+   quickParaElement.textContent = 'one of your long lost children';
+   document.querySelector('#content-3').appendChild(quickParaElement);
+   return;
+}
+
+function toggleColorSync () {
+   const toggledElements = document.querySelectorAll('.created-from-button');
+   for (let i = 0; i < toggledElements.length; i++) {
+      toggledElements[i].classList.toggle('change-my-color');
+   }
+   return;
+}
