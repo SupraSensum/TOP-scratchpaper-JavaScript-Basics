@@ -157,6 +157,20 @@ const demo5Button3 = document.querySelector('#demo-button-5-method-3');
 demo5Button2.onclick = () => alert('Hello World'); // ew, lol
 
 // Method 3... mmm, delicious
-demo5Button3.addEventListener('click', () => {
+demo5Button3.addEventListener('click', (testtest) => {
+   console.log(testtest);
+   console.log(testtest.target);
+   testtest.target.style.background = 'lightgreen';
    alert('Hello World');
+});
+
+// demo 6
+// Attaching listeners to groups of nodes
+demo6Buttons = document.querySelectorAll('#content-6 > button');
+
+demo6Buttons.forEach(button => {
+   button.addEventListener('click', (buttonClickDetails) => {
+      buttonClickDetails.target.style.background = 'lightgreen';
+      alert(button.id);
+   });
 });
