@@ -71,11 +71,11 @@ const button3CreateElement = document.querySelector('#demo-button-3-create-eleme
 const button3ToggleColorSync = document.querySelector('#demo-button-3-toggle-color-sync');
 const theHeader3 = document.querySelector('#demo-header-3');
 
-button3ChangeColor.addEventListener('click', paintItXXX);
+button3ChangeColor.addEventListener('click', paintItXXX3);
 button3CreateElement.addEventListener('click', demo3CreateElement);
 button3ToggleColorSync.addEventListener('click', toggleColorSync);
 
-function paintItXXX () {
+function paintItXXX3 () {
    const thoseToBePainted = document.querySelectorAll('.change-my-color');
    for (i = 0; i < thoseToBePainted.length; i++) {
       switch (thoseToBePainted[i].style.color) {
