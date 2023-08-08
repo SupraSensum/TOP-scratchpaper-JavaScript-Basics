@@ -102,7 +102,7 @@ function paintItXXX () {
 
 function demo3CreateElement () {
    const quickParaElement = document.createElement('p');
-   quickParaElement.setAttribute('class', 'created-from-button');
+   quickParaElement.classList.add('created-from-button');
    quickParaElement.textContent = 'one of your long lost children';
    document.querySelector('#content-3').appendChild(quickParaElement);
    return;
