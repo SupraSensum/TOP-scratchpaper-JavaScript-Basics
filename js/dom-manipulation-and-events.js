@@ -11,11 +11,11 @@ function paintItXXX () {
       case '':
          theHeader.style.color = 'red';
          break;
-      case 'black':
+      case 'inherit':
          theHeader.style.color = 'red';
          break;
       case 'red':
-         theHeader.style.color = 'black';
+         theHeader.style.color = 'inherit';
          break;
       default:
          break;
@@ -44,11 +44,11 @@ function paintItXXX2 () {
       case '':
          theHeader2.style.color = 'red';
          break;
-      case 'black':
+      case 'inherit':
          theHeader2.style.color = 'red';
          break;
       case 'red':
-         theHeader2.style.color = 'black';
+         theHeader2.style.color = 'inherit';
          break;
       default:
          break;
