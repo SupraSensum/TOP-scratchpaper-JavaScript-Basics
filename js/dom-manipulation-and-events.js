@@ -123,3 +123,40 @@ function toggleColorSync () {
 
    return;
 }
+
+// demo 4
+const demo4ContentDiv = document.querySelector('#content-4');
+const button4 = document.querySelector('#demo-button-4');
+
+button4.addEventListener('click', demo4CompleteTheExercise);
+
+function demo4CompleteTheExercise () {
+   demo4ContentDiv.appendChild(demo4CreateFillAndStyleElement('p', "Hey I'm red!", 'color: red;'));
+   demo4ContentDiv.appendChild(demo4CreateFillAndStyleElement('h3', "I'm a blue h3!", 'color: blue;'));
+   
+   const demo4CreatedDivContainer = demo4CreateFillAndStyleElement('div', '', 'border: 2px solid black; background-color: pink;');
+
+   demo4CreatedDivContainer.appendChild(demo4CreateFillAndStyleElement('h1', "I'm in a div", ''));
+   demo4CreatedDivContainer.appendChild(demo4CreateFillAndStyleElement('p', "ME TOO!", ''));
+
+   demo4ContentDiv.appendChild(demo4CreatedDivContainer);
+}
+
+function demo4CreateFillAndStyleElement (elementType = 'p', content = 'placeholder', styleOptions = 'color: red;') {
+   const someElement = document.createElement(elementType.toString());
+   someElement.textContent = content.toString();
+   someElement.style.cssText = styleOptions;
+   return someElement;
+}
+
+// demo 5
+const demo5Button2 = document.querySelector('#demo-button-5-method-2');
+const demo5Button3 = document.querySelector('#demo-button-5-method-3');
+
+// Method 2... yuck
+demo5Button2.onclick = () => alert('Hello World'); // ew, lol
+
+// Method 3... mmm, delicious
+demo5Button3.addEventListener('click', () => {
+   alert('Hello World');
+});
