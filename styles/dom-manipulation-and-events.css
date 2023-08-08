@@ -1,0 +1,122 @@
+/* Begin boilerplate styles */
+/* Please place all demo-specific styles after these boilerplate styles */
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,regular,italic,500,500italic,700,700italic,900,900italic);
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    color: #264653;
+    font-family: 'Roboto', sans-serif;
+    word-wrap: break-word; /* This is only here to prevent the <code> elements in the Navigation panel from bleeding outside their containers */
+}
+
+code {
+    font-family: monospace;
+    background-color: #f7f7f7;
+    border: 1px solid #374151;
+    border-radius: 4px;
+    flex: inherit;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+header,
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-weight: bolder;
+    min-height: 60px;
+    max-height: 120px;
+    padding: 32px 16px;
+    flex: 1 0 auto;
+    flex-direction: column;
+}
+
+header {
+    border-bottom: 3px solid #d9d6d5;
+}
+
+footer {
+    flex: 0 1 auto;
+    gap: 8px;
+}
+
+a {
+    /* text-decoration: none; */
+}
+
+ul,
+ol {
+    /* list-style-type: none; */
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    font-weight: bold;
+    padding-left: 20%;
+}
+
+.content-container {
+    display: flex;
+    flex-direction: row;
+    flex: 1 1 auto;
+    border-bottom: 3px solid #d9d6d5;
+}
+
+.content-container .sidebar {
+    flex: 1 1 33vw;
+    max-width: 249px;
+    background-color: #f7f4f3;
+    border-right: 1px solid #e9e6e4;
+}
+
+.content-container .content {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.content-container > * > .title {
+    text-align: center;
+    padding: 16px 16px;
+    border-bottom: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Begin styles for <p> elements under each content's title */
+.content-container > * > .title > p {
+    background-color: #f7f4f3;
+    border-radius: 8px;
+    border: 1px solid #e9e6e4;
+    padding: 16px 32px;
+    margin-top: 16px;
+}
+/* End styles for <p> elements */
+
+.content > * {
+    border-bottom: 2px solid #e9e6e4;
+    padding: 16px 16px;
+}
+
+.content > * > button {
+    padding: 4px 16px;
+    font-weight: bold;
+    width: 100%;
+    background-color: #f7f4f3;
+    border-radius: 4px;
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+
+/* End boilerplate styles */
+/* Please place all demo-specific styles below */
