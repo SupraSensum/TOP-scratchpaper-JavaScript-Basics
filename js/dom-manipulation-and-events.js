@@ -110,8 +110,16 @@ function demo3CreateElement () {
 
 function toggleColorSync () {
    const toggledElements = document.querySelectorAll('.created-from-button');
+
    for (let i = 0; i < toggledElements.length; i++) {
       toggledElements[i].classList.toggle('change-my-color');
    }
+
+   if (toggledElements[toggledElements.length - 1].classList.contains('change-my-color')) {
+      button3ToggleColorSync.textContent = 'toggle color sync [on]';
+   } else {
+      button3ToggleColorSync.textContent = 'toggle color sync [off]';
+   }
+
    return;
 }
