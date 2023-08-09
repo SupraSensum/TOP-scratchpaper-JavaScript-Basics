@@ -42,9 +42,6 @@ code {
 
 .drum-kit-item {
    flex: 1 0 0;
-   height: 105px;
-   min-width: 105px;
-   max-width: 160px;
    padding: 8px;
    border: 8px solid black;
    display: flex;
@@ -54,6 +51,7 @@ code {
    font-weight: bolder;
    border-radius: 8px;
    background-color: rgba(0, 0, 0, 0.7);
+   transition: all .07s;
 }
 
 .drum-kit-item > * {
@@ -61,11 +59,21 @@ code {
 }
 
 .drum-kit-item > p {
-   color: goldenrod;
+   font-size: 1.2rem;
+   text-transform: uppercase;
+   letter-spacing: .1rem;
+   color: #ffc600;
 }
 
-.drum-kit-item > h1 {
+.drum-kit-item > kbd {
    color: white;
+   font-size: 4rem;
+}
+ 
+.playing {
+  transform: scale(1.1);
+  border-color: #ffc600;
+  box-shadow: 0 0 1rem #ffc600;
 }
 
 /* TROUBLESHOOTING */
@@ -114,20 +122,5 @@ body {
    text-shadow: 0 0 .5rem black;
  }
  
- .playing {
-   transform: scale(1.1);
-   border-color: #ffc600;
-   box-shadow: 0 0 1rem #ffc600;
- }
- 
- kbd {
-   display: block;
-   font-size: 4rem;
- }
- 
  .sound {
-   font-size: 1.2rem;
-   text-transform: uppercase;
-   letter-spacing: .1rem;
-   color: #ffc600;
  }  */
