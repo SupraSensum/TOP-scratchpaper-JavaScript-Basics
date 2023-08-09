@@ -9,6 +9,11 @@
     word-wrap: break-word; /* This is only here to prevent the <code> elements in the Navigation panel from bleeding outside their containers */
 }
 
+html {
+   background: url('../images/drum-kit-background.jpg') bottom center;
+   background-size: cover;
+}
+
 body {
    height: 100vh;
    width: 100vw;
@@ -31,31 +36,98 @@ code {
    align-items: center;
    gap: 16px;
    flex: 1 1 auto;
+   flex-wrap: wrap;
+   padding: 32px;
 }
 
 .drum-kit-item {
-   flex: 1 1 0;
+   flex: 1 0 0;
+   height: 105px;
+   min-width: 105px;
    max-width: 160px;
-   height: 160px;
    padding: 8px;
    border: 8px solid black;
    display: flex;
    justify-content: center;
    align-items: center;
    flex-direction: column;
-   gap: 8px;
+   font-weight: bolder;
+   border-radius: 8px;
+   background-color: rgba(0, 0, 0, 0.7);
 }
 
 .drum-kit-item > * {
    flex: 0 1 auto;
 }
 
+.drum-kit-item > p {
+   color: goldenrod;
+}
+
+.drum-kit-item > h1 {
+   color: white;
+}
+
 /* TROUBLESHOOTING */
 
 .drum-kit-container {
-   border: 4px solid orangered;
+   /* border: 4px solid orangered; */
 }
 
 body {
-   border: 4px solid orangered;
+   /* border: 4px solid orangered; */
 }
+
+/* From the tutorial */
+
+/* html {
+   font-size: 10px;
+   background: url('./background.jpg') bottom center;
+   background-size: cover;
+ }
+ 
+ body,html {
+   margin: 0;
+   padding: 0;
+   font-family: sans-serif;
+ }
+ 
+ .keys {
+   display: flex;
+   flex: 1;
+   min-height: 100vh;
+   align-items: center;
+   justify-content: center;
+ }
+ 
+ .key {
+   border: .4rem solid black;
+   border-radius: .5rem;
+   margin: 1rem;
+   font-size: 1.5rem;
+   padding: 1rem .5rem;
+   transition: all .07s ease;
+   width: 10rem;
+   text-align: center;
+   color: white;
+   background: rgba(0,0,0,0.4);
+   text-shadow: 0 0 .5rem black;
+ }
+ 
+ .playing {
+   transform: scale(1.1);
+   border-color: #ffc600;
+   box-shadow: 0 0 1rem #ffc600;
+ }
+ 
+ kbd {
+   display: block;
+   font-size: 4rem;
+ }
+ 
+ .sound {
+   font-size: 1.2rem;
+   text-transform: uppercase;
+   letter-spacing: .1rem;
+   color: #ffc600;
+ }  */
