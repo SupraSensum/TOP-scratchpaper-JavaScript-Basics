@@ -215,7 +215,7 @@ allLeds[0].classList.add('ledOn');
 const allOfLeDivs = document.querySelectorAll('#content-9 div');
 const theLog = document.createElement('div');
 const leContainerOfLeDivs = document.querySelector('#content-9');
-const demo9Button = document.querySelector('#demo-9-button');
+const demo9ReverseButton = document.querySelector('#demo-9-button');
 
 let captureState = false;
 
@@ -226,7 +226,7 @@ allOfLeDivs.forEach((leSingleDiv) => {
    leSingleDiv.addEventListener('click', logZeClick, {capture: captureState});
 });
 
-demo9Button.addEventListener('click', reverseLogOrder);
+demo9ReverseButton.addEventListener('click', reverseLogOrder);
 
 // Le functions
 function logZeClick (event) {
@@ -249,4 +249,7 @@ function reverseLogOrder () {
       leSingleDiv.addEventListener('click', logZeClick, {capture: captureState});
       console.log('added');
    });
+
+   // Update button status
+   demo9ReverseButton.textContent = `reverse order [capture: ${captureState}]`;
 }
