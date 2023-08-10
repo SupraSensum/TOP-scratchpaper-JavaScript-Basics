@@ -209,6 +209,9 @@ function turnOffLED (event) {
 allLeds[0].classList.add('ledOn');
 
 // demo 9
+// There's a weird flex problem I'm having where as we append children to theLog,
+// the flex container leContainerOfLeDivs does not grow. Can't figure this one
+// out. Moving on with my studies
 const allOfLeDivs = document.querySelectorAll('#content-9 div');
 const theLog = document.createElement('div');
 const leContainerOfLeDivs = document.querySelector('#content-9');
