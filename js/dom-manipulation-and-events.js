@@ -233,13 +233,17 @@ function logZeClick (event) {
 }
 
 function reverseLogOrder () {
-   captureState = !captureState;
-
    allOfLeDivs.forEach((leSingleDiv) => {
       leSingleDiv.removeEventListener('click', logZeClick, {capture: captureState});
+      console.log('removed');
    });
+
+   captureState = !captureState;
+
+   theLog.textContent = '';
    
    allOfLeDivs.forEach((leSingleDiv) => {
       leSingleDiv.addEventListener('click', logZeClick, {capture: captureState});
+      console.log('added');
    });
 }

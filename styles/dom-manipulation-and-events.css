@@ -157,6 +157,7 @@ ol {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    flex: 1 1 auto;
 }
 
 #content-9 > .one {
@@ -166,6 +167,7 @@ ol {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex: 1 0 auto;
 }
 
 #content-9 > .one > div {
@@ -182,6 +184,7 @@ ol {
     height: 75%;
     width: 75%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
