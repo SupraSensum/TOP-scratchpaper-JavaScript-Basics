@@ -178,3 +178,34 @@ demo6Buttons.forEach(button => {
       alert(button.id);
    });
 });
+
+// demo 8
+const allLeds = document.querySelectorAll('.led');
+
+allLeds.forEach((led) => {
+   // what's really going on?
+   // 
+   // 1. page loads
+   // ... add transition end listener
+   // 2. turn on first led (.on [should have transition property])
+   // 3. upon transition end, turn off the first led and turn on the second led
+   // 4. loop through... figure out this part when you get there
+
+   led.addEventListener('transitionend', turnOffLED);
+});
+
+function turnOnLED (event) {
+   return;
+}
+
+function turnOffLED (event) {
+   if(event.propertyName === 'transform') {
+      console.log(event);
+
+      this.classList.remove('ledOn');
+   }
+
+   return;
+}
+
+allLeds[0].classList.add('ledOn');
