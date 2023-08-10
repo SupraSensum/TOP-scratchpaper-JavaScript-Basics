@@ -149,3 +149,39 @@ ol {
     background-color: whitesmoke;
     transform: scale(1.1);
 }
+
+/* demo 9 */
+#content-9 {
+    min-height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#content-9 > .one {
+    background-color: green;
+    height: 75%;
+    width: 75%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#content-9 > .one > div {
+    background-color: blue;
+    height: 75%;
+    width: 75%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#content-9 > .one > div > div {
+    background-color: yellow;
+    height: 75%;
+    width: 75%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

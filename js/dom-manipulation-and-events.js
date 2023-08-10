@@ -200,8 +200,6 @@ function turnOnLED (event) {
 
 function turnOffLED (event) {
    if(event.propertyName === 'transform') {
-      console.log(event);
-
       this.classList.remove('ledOn');
    }
 
@@ -209,3 +207,39 @@ function turnOffLED (event) {
 }
 
 allLeds[0].classList.add('ledOn');
+
+// demo 9
+const allOfLeDivs = document.querySelectorAll('#content-9 div');
+const theLog = document.createElement('div');
+const leContainerOfLeDivs = document.querySelector('#content-9');
+const demo9Button = document.querySelector('#demo-9-button');
+
+let captureState = false;
+
+leContainerOfLeDivs.appendChild(theLog);
+
+// Le listeners
+allOfLeDivs.forEach((leSingleDiv) => {
+   leSingleDiv.addEventListener('click', logZeClick, {capture: captureState});
+});
+
+demo9Button.addEventListener('click', reverseLogOrder);
+
+// Le functions
+function logZeClick (event) {
+   const logEntry = document.createElement('p');
+   logEntry.textContent = this.classList.value;
+   theLog.appendChild(logEntry);
+}
+
+function reverseLogOrder () {
+   captureState = !captureState;
+
+   allOfLeDivs.forEach((leSingleDiv) => {
+      leSingleDiv.removeEventListener('click', logZeClick, {capture: captureState});
+   });
+   
+   allOfLeDivs.forEach((leSingleDiv) => {
+      leSingleDiv.addEventListener('click', logZeClick, {capture: captureState});
+   });
+}
