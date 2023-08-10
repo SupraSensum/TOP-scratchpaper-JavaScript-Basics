@@ -221,6 +221,7 @@ const leContainerOfLeDivs = document.querySelector('#content-9');
 const demo9ReverseButton = document.querySelector('#demo-9-button');
 
 let captureState = false;
+let statusOfStopPropagation = false;
 
 leContainerOfLeDivs.appendChild(theLog);
 
@@ -236,6 +237,8 @@ function logZeClick (event) {
    const logEntry = document.createElement('p');
    logEntry.textContent = this.classList.value;
    theLog.appendChild(logEntry);
+
+   if(statusOfStopPropagation) event.stopPropagation();
 }
 
 function reverseLogOrder () {
@@ -246,13 +249,18 @@ function reverseLogOrder () {
    captureState = !captureState;
 
    theLog.textContent = '';
+
+   // Update button status
+   demo9ReverseButton.textContent = `reverse order [capture: ${captureState}]`;
+
+   if(confirm('run ".stopPropagation()"?')) {
+      demo9ReverseButton.textContent += ' [.stopPropagation() enabled]';
+      statusOfStopPropagation = true;
+   } else statusOfStopPropagation = false;
    
    allOfLeDivs.forEach((leSingleDiv) => {
       leSingleDiv.addEventListener('click', logZeClick, {capture: captureState});
    });
-
-   // Update button status
-   demo9ReverseButton.textContent = `reverse order [capture: ${captureState}]`;
 }
 
 // Toggle propagation button actions
