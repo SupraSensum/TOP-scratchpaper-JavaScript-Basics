@@ -212,6 +212,9 @@ allLeds[0].classList.add('ledOn');
 // There's a weird flex problem I'm having where as we append children to theLog,
 // the flex container leContainerOfLeDivs does not grow. Can't figure this one
 // out. Moving on with my studies
+// 
+// Tried getting chatGPT to help me with understanding why the flex container
+// would not behave as expected: https://chat.openai.com/share/fbbbc2ef-5bd8-4dae-b82c-58ee0f09724e
 const allOfLeDivs = document.querySelectorAll('#content-9 div');
 const theLog = document.createElement('div');
 const leContainerOfLeDivs = document.querySelector('#content-9');
@@ -224,6 +227,9 @@ leContainerOfLeDivs.appendChild(theLog);
 // Le listeners
 allOfLeDivs.forEach((leSingleDiv) => {
    leSingleDiv.addEventListener('click', logZeClick, {capture: captureState});
+
+   // Force layout update
+   console.log(leContainerOfLeDivs.offsetHeight);
 });
 
 demo9ReverseButton.addEventListener('click', reverseLogOrder);
@@ -233,6 +239,9 @@ function logZeClick (event) {
    const logEntry = document.createElement('p');
    logEntry.textContent = this.classList.value;
    theLog.appendChild(logEntry);
+
+   // Force layout update
+   console.log(leContainerOfLeDivs.offsetHeight);
 }
 
 function reverseLogOrder () {
@@ -252,4 +261,8 @@ function reverseLogOrder () {
 
    // Update button status
    demo9ReverseButton.textContent = `reverse order [capture: ${captureState}]`;
+
+   // Force layout update
+   console.log(leContainerOfLeDivs.offsetHeight);
 }
+

@@ -152,7 +152,8 @@ ol {
 
 /* demo 9 */
 #content-9 {
-    min-height: 50vh;
+    min-height: 1000px;
+    background-color: red;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -167,7 +168,6 @@ ol {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex: 1 0 auto;
 }
 
 #content-9 > .one > div {
