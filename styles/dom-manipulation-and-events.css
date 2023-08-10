@@ -153,7 +153,6 @@ ol {
 /* demo 9 */
 #content-9 {
     min-height: 1000px;
-    background-color: red;
     display: flex;
     justify-content: center;
     align-items: center;

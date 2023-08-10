@@ -227,9 +227,6 @@ leContainerOfLeDivs.appendChild(theLog);
 // Le listeners
 allOfLeDivs.forEach((leSingleDiv) => {
    leSingleDiv.addEventListener('click', logZeClick, {capture: captureState});
-
-   // Force layout update
-   console.log(leContainerOfLeDivs.offsetHeight);
 });
 
 demo9ReverseButton.addEventListener('click', reverseLogOrder);
@@ -239,15 +236,11 @@ function logZeClick (event) {
    const logEntry = document.createElement('p');
    logEntry.textContent = this.classList.value;
    theLog.appendChild(logEntry);
-
-   // Force layout update
-   console.log(leContainerOfLeDivs.offsetHeight);
 }
 
 function reverseLogOrder () {
    allOfLeDivs.forEach((leSingleDiv) => {
       leSingleDiv.removeEventListener('click', logZeClick, {capture: captureState});
-      console.log('removed');
    });
 
    captureState = !captureState;
@@ -256,13 +249,19 @@ function reverseLogOrder () {
    
    allOfLeDivs.forEach((leSingleDiv) => {
       leSingleDiv.addEventListener('click', logZeClick, {capture: captureState});
-      console.log('added');
    });
 
    // Update button status
    demo9ReverseButton.textContent = `reverse order [capture: ${captureState}]`;
-
-   // Force layout update
-   console.log(leContainerOfLeDivs.offsetHeight);
 }
 
+// Toggle propagation button actions
+// 
+// add event listeners
+// if clicked
+//    classList.remove on all associated button elements
+//    classList.add to clicked button element
+// 
+// REALIZE I'M IN WAY TOO DEEP
+//    Since .stopPropagation() can only be run (seemingly) when the event is
+//    created, well, life just gets complicated
