@@ -222,6 +222,7 @@ const demo9ReverseButton = document.querySelector('#demo-9-button');
 
 let captureState = false;
 let statusOfStopPropagation = false;
+let statusSelfDestruct = false;
 
 leContainerOfLeDivs.appendChild(theLog);
 
@@ -257,9 +258,17 @@ function reverseLogOrder () {
       demo9ReverseButton.textContent += ' [.stopPropagation() enabled]';
       statusOfStopPropagation = true;
    } else statusOfStopPropagation = false;
+
+   // self destruct
+   confirm('Self destruct?') ?
+      statusSelfDestruct = true :
+      statusSelfDestruct = false;
    
    allOfLeDivs.forEach((leSingleDiv) => {
-      leSingleDiv.addEventListener('click', logZeClick, {capture: captureState});
+      leSingleDiv.addEventListener('click', logZeClick, {
+         capture: captureState,
+         once: statusSelfDestruct
+      });
    });
 }
 
