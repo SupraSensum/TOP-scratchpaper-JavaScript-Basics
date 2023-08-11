@@ -337,3 +337,13 @@ window.addEventListener('keyup', (event) => {
 });
 
 // demo 12
+const demo12ColorfulDiv = document.querySelector('#content-12');
+let demo12ColorIndex = 0;
+
+window.addEventListener('keydown', demo12CycleColors);
+
+function demo12CycleColors(event) {
+   if (demo12ColorIndex > 25) demo12ColorIndex = 0;
+
+   demo12ColorfulDiv.style.background = demo11Colors[demo12ColorIndex++];
+}
