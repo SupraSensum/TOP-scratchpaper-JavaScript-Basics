@@ -347,3 +347,5 @@ function demo12CycleColors(event) {
 
    demo12ColorfulDiv.style.background = demo11Colors[demo12ColorIndex++];
 }
+
+document.querySelector('#title-12').addEventListener('contextmenu', (event) => event.preventDefault());
