@@ -282,3 +282,14 @@ function reverseLogOrder () {
 // REALIZE I'M IN WAY TOO DEEP
 //    Since .stopPropagation() can only be run (seemingly) when the event is
 //    created, well, life just gets complicated
+
+// demo 10
+const demo10Para = document.querySelector('#content-10 p');
+const demo10Button = document.querySelector('#content-10 button');
+
+for (let i = 0; i < 10; i++) {
+   demo10Para.addEventListener('click', () => console.log(`index: ${i}`));
+}
+
+// getEventListeners apparently only runs from within DevTools console
+// demo10Button.addEventListener('click', () => getEventListeners(demo10Para));
