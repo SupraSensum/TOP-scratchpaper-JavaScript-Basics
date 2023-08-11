@@ -295,8 +295,8 @@ for (let i = 0; i < 10; i++) {
 // demo10Button.addEventListener('click', () => getEventListeners(demo10Para));
 
 // demo 11
-const colorfulDiv = document.querySelector('#content-11');
-const colors = [
+const demo11ColorfulDiv = document.querySelector('#content-11');
+const demo11Colors = [
    'aqua',
    'blue',
    'coral',
@@ -326,12 +326,14 @@ const colors = [
 ]
 
 window.addEventListener('keydown', (event) => {
-   color = event.key.charCodeAt() - 97;
+   let color = event.key.charCodeAt() - 97;
 
-   if(color >= 0 && color <= 25) colorfulDiv.style.background = colors[color];
-   console.log(`color: ${colors[color]} | index: ${color}`);
+   if(color >= 0 && color <= 25) demo11ColorfulDiv.style.background = demo11Colors[color];
+   console.log(`color: ${demo11Colors[color]} | index: ${color}`);
 });
 
 window.addEventListener('keyup', (event) => {
-   colorfulDiv.style.background = 'inherit';
+   demo11ColorfulDiv.style.background = 'inherit';
 });
+
+// demo 12
