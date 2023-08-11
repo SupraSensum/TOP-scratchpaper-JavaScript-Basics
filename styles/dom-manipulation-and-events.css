@@ -187,3 +187,8 @@ ol {
     justify-content: center;
     align-items: center;
 }
+
+/* demo 11 */
+#content-11 {
+    height: 50vh;
+}

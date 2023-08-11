@@ -293,3 +293,45 @@ for (let i = 0; i < 10; i++) {
 
 // getEventListeners apparently only runs from within DevTools console
 // demo10Button.addEventListener('click', () => getEventListeners(demo10Para));
+
+// demo 11
+const colorfulDiv = document.querySelector('#content-11');
+const colors = [
+   'aqua',
+   'blue',
+   'coral',
+   'dimgray',
+   'sienna',
+   'fuchsia',
+   'green',
+   'honeydew',
+   'indigo',
+   'whitesmoke',
+   'khaki',
+   'lavender',
+   'maroon',
+   'navy',
+   'olive',
+   'pink',
+   'darkslategray',
+   'red',
+   'salmon',
+   'teal',
+   'tomato',
+   'violet',
+   'wheat',
+   'turquoise',
+   'yellow',
+   'lemonchiffon'
+]
+
+window.addEventListener('keydown', (event) => {
+   color = event.key.charCodeAt() - 97;
+
+   if(color >= 0 && color <= 25) colorfulDiv.style.background = colors[color];
+   console.log(`color: ${colors[color]} | index: ${color}`);
+});
+
+window.addEventListener('keyup', (event) => {
+   colorfulDiv.style.background = 'inherit';
+});
