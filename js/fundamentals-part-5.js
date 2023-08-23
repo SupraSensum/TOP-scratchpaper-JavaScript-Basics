@@ -170,3 +170,137 @@ objectTestButton9.addEventListener('click', () => {
       console.log(`${prop}: ${level1Object.nextLevel[prop]}`);
    }
 }); // mmkay, theory turns out to be true... and so the depths stare back at me
+
+// Hello, object
+const helloObjectButton = document.getElementById('helloObject');
+helloObjectButton.addEventListener('click', () => {
+   let user = {};
+   let counter = 0;
+
+   console.log(`Test ${counter++}`);
+   for (let prop in user) console.log (`${prop}:${user[prop]}`);
+
+   user.name = 'John';
+
+   console.log(`Test ${counter++}`);
+   for (let prop in user) console.log (`${prop}:${user[prop]}`);
+
+   user.surname = 'Smith';
+
+   console.log(`Test ${counter++}`);
+   for (let prop in user) console.log (`${prop}:${user[prop]}`);
+
+   user.name = 'Pete';
+
+   console.log(`Test ${counter++}`);
+   for (let prop in user) console.log (`${prop}:${user[prop]}`);
+
+   delete user.name;
+
+   console.log(`Test ${counter++}`);
+   for (let prop in user) console.log (`${prop}:${user[prop]}`);
+});
+
+// Check for emptiness
+const checkEmptinessButton = document.getElementById('checkEmptiness');
+checkEmptinessButton.addEventListener('click', () => {
+   let schedule = {};
+
+   alert( isEmpty(schedule) ); // true
+
+   schedule["8:30"] = "get up";
+
+   alert( isEmpty(schedule) ); // false
+
+   // my attempt
+   function isEmpty (someObject) {
+      let numberOfProperties = 0;
+      for (let prop in someObject) numberOfProperties++;
+      if (numberOfProperties === 0) return true;
+      else return false;
+   }
+
+   // the lesson's solution
+   // function isEmpty (someObject) {
+   //    for (let key in someObject) {
+   //       return false;
+   //    }
+   //    return true;
+   // }
+});
+
+// Sum object properties
+const sumObjectPropertiesButton = document.getElementById('sumObjectProperties');
+sumObjectPropertiesButton.addEventListener('click', () => {
+   let salaries = {
+      John: 100,
+      Ann: 160,
+      Pete: 130
+   }
+
+   let payroll = 0;
+   for (salary in salaries) {
+      payroll += salaries[salary];
+   }
+
+   alert(payroll);
+});
+
+// Multiply numeric property values by 2
+const multiplyNumericPropertyValuesBy2 = document.getElementById('multiplyNumericPropertyValuesBy2');
+multiplyNumericPropertyValuesBy2.addEventListener('click', () => {
+   // before the call
+   let menu = {
+      width: 200,
+      height: 300,
+      title: "My menu"
+   };
+
+   for (let prop in menu) console.log (`${prop}:${menu[prop]}`);
+
+   multiplyNumeric(menu);
+
+   // after the call
+   menu = {
+      width: 400,
+      height: 600,
+      title: "My menu"
+   };
+
+   for (let prop in menu) console.log (`${prop}:${menu[prop]}`);
+
+   function multiplyNumeric(obj) {
+      for (let key in obj) {
+         if (typeof obj[key] === 'number') obj[key] *= 2;
+      }
+   }
+});
+
+// Two ways to create function properties in an object
+const prac2Test1Button = document.getElementById('prac2test1');
+prac2Test1Button.addEventListener('click', () => {
+   let someObject = {
+      name: 'Gary',
+      age: '45',
+      giveName: () => {
+         console.log(`My name is ${someObject.name}`);
+      },
+      giveAge() {console.log(`I am ${someObject.age} years old`);},
+   }
+
+   someObject.giveName();
+   someObject.giveAge();
+});
+
+// Objects as object properties
+const prac2Test2Button = document.getElementById('prac2test2');
+prac2Test2Button.addEventListener('click', () => {
+   let person = {}
+
+   person.name = {};
+   person.name.first = 'Joseph';
+   person.name.last = 'Smith';
+   person.age = 25;
+
+   console.log(`${person.name.first} ${person.name.last} ${person.age}`);
+});
