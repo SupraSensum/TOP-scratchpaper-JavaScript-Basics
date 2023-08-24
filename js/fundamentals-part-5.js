@@ -339,3 +339,27 @@ const prac3test1 = document.getElementById('prac3test1');
 prac3test1.addEventListener('click', () => {
    
 });
+
+// camelize
+// how we gon' do it?
+// split n join
+// - split at delim '-'
+// - arryOfStrings.charAt(0).toUpperCase()
+const prac4Test1 = document.getElementById('camelize');
+prac4Test1.addEventListener('click', () => {
+   const ORIGINAL = 'background-color';
+   const EXPECTATION = 'backgroundColor';
+
+   function camelize(someString) {
+      let someSplitStringArray = someString.split('-');
+      let someSplitStringArrayUpperCased = someSplitStringArray.map((string, index) => {
+         return index > 0 ? string.charAt(0).toUpperCase() + string.slice(1) : string;
+      });
+      camelizedString = someSplitStringArrayUpperCased.join('');
+
+      return camelizedString;
+   }
+
+   console.table(camelize(ORIGINAL));
+   console.log(camelize(ORIGINAL) == EXPECTATION);
+});
