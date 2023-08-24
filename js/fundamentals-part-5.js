@@ -351,7 +351,9 @@ prac4Test1.addEventListener('click', () => {
    const EXPECTATION = 'WebkitTransition';
 
    function camelize(someString) {
-      return someString.split('-').map((string, index) => index > 0 ? string.charAt(0).toUpperCase() + string.slice(1) : string).join('');
+      return someString.split('-').map((string, index) => index > 0 ?
+         string.charAt(0).toUpperCase() + string.slice(1) :
+         string).join('');
    }
 
    console.table(camelize(ORIGINAL));
