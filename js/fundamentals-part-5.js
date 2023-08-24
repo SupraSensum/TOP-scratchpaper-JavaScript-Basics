@@ -347,13 +347,11 @@ prac3test1.addEventListener('click', () => {
 // - arryOfStrings.charAt(0).toUpperCase()
 const prac4Test1 = document.getElementById('camelize');
 prac4Test1.addEventListener('click', () => {
-   const ORIGINAL = 'background-color';
-   const EXPECTATION = 'backgroundColor';
+   const ORIGINAL = '-webkit-transition';
+   const EXPECTATION = 'WebkitTransition';
 
    function camelize(someString) {
-      return someString.split('-').map((string, index) => {
-         return index > 0 ? string.charAt(0).toUpperCase() + string.slice(1) : string;
-      }).join('');
+      return someString.split('-').map((string, index) => index > 0 ? string.charAt(0).toUpperCase() + string.slice(1) : string).join('');
    }
 
    console.table(camelize(ORIGINAL));
