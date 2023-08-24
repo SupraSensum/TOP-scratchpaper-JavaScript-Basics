@@ -351,13 +351,9 @@ prac4Test1.addEventListener('click', () => {
    const EXPECTATION = 'backgroundColor';
 
    function camelize(someString) {
-      let someSplitStringArray = someString.split('-');
-      let someSplitStringArrayUpperCased = someSplitStringArray.map((string, index) => {
+      return someString.split('-').map((string, index) => {
          return index > 0 ? string.charAt(0).toUpperCase() + string.slice(1) : string;
-      });
-      camelizedString = someSplitStringArrayUpperCased.join('');
-
-      return camelizedString;
+      }).join('');
    }
 
    console.table(camelize(ORIGINAL));
