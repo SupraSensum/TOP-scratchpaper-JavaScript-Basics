@@ -358,3 +358,30 @@ prac4Test1.addEventListener('click', () => {
    console.table(camelize(ORIGINAL));
    console.log(camelize(ORIGINAL) == EXPECTATION);
 });
+
+// Filter range
+const prac4Test2 = document.getElementById('filterRange');
+prac4Test2.addEventListener('click', () => {
+   let arr = [5, 3, 8, 1];
+
+   let filtered = filterRange(arr, 1, 4);
+
+   console.table( filtered ); // 3,1 (matching values)
+
+   console.table( arr ); // 5,3,8,1 (not modified)
+
+   function filterRange(arr, a, b) {
+      // return arr.filter((item) => {
+      //    return item >= a && item <= b ? true : false;
+      // });
+
+      // return arr
+      //    .filter(
+      //       (item) => item >= a && item <= b ? true : false
+      //    );
+
+      return arr.filter(
+         (item) => item >= a && item <= b
+      )
+   }
+});
