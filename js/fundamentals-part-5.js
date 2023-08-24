@@ -303,4 +303,39 @@ prac2Test2Button.addEventListener('click', () => {
    person.age = 25;
 
    console.log(`${person.name.first} ${person.name.last} ${person.age}`);
+   console.log(person);
+});
+
+// Two ways to create function properties in an object - UPDATED using 'this' keyword
+const prac2Test3Button = document.getElementById('prac2test3');
+prac2Test3Button.addEventListener('click', () => {
+   let someObject = {
+      name: 'Gary',
+      age: '45',
+      giveName: () => {
+         console.log(`My name is ${this.name}`);
+      },
+      giveAge() {console.log(`I am ${this.age} years old`);},
+   }
+
+   someObject.giveName();
+   someObject.giveAge();
+});
+
+// constructors
+const prac2test4Button = document.getElementById('prac2test4');
+prac2test4Button.addEventListener('click', () => {
+   const myFirstProduct = new product(prompt('Enter product name:', 'Table'));
+   myFirstProduct.logName();
+
+   function product(name) {
+      this.name = name;
+      this.logName = () => console.log(this.name);
+   }
+});
+
+// object basics 1
+const prac3test1 = document.getElementById('prac3test1');
+prac3test1.addEventListener('click', () => {
+   
 });
