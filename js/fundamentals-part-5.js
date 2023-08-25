@@ -132,7 +132,7 @@ objectTestButton8.addEventListener('click', () => {
 
    console.log('and again');
 
-   // redfine
+   // redefine
    someObject = {
       '2': 2,
       '3': 3,
@@ -427,7 +427,7 @@ prac4Test5.addEventListener('click', () => {
    console.log( arr ); // HTML, JavaScript, CSS (no changes)
 });
 
-// Create an extendable calculator
+// Create an extendable calculator --- my way...
 const prac4Test6 = document.getElementById('extendableCalc');
 prac4Test6.addEventListener('click', () => {
    function calculate(str) {
@@ -454,5 +454,19 @@ prac4Test6.addEventListener('click', () => {
       return result;
    }
 
-   console.log(calculate('3 + 7'));
+   console.log(calculate('3 + 7 - 2'));
+});
+
+// Create an extendable calculator... holy crap, constructors are beautiful
+const prac4Test7 = document.getElementById('extendableCalc2');
+prac4Test7.addEventListener('click', () => {
+   function Calculator() {
+      this['+'] = (a, b) => Number(a) + Number(b);
+      this['-'] = (a, b) => Number(a) - Number(b);
+      this.calculate = (str) => {
+         const arr = str.split(' ');
+         return this[arr[1]](arr[0], arr[2]);
+      };
+      this.addMethod = (name, func) => this[name] = func;
+   }
 });
