@@ -385,3 +385,74 @@ prac4Test2.addEventListener('click', () => {
       )
    }
 });
+
+// Filter range "in place"
+const prac4Test3 = document.getElementById('filterRangeInPlace');
+prac4Test3.addEventListener('click', () => {
+   let arr = [5, 3, 8, 1];
+
+   filterRangeInPlace(arr, 1, 4); // removed the numbers except from 1 to 4
+
+   console.log( arr ); // [3, 1]
+
+   function filterRangeInPlace (arr, a, b) {
+      arr.splice(0, arr.length, ...arr.filter(
+            (item) => item >= a && item <= b
+         ));
+   }
+});
+
+// Sort in decreasing order
+const prac4Test4 = document.getElementById('sortInDecreasingOrder');
+prac4Test4.addEventListener('click', () => {
+   let arr = [5, 2, 1, -10, 8];
+
+   arr.sort((a, b) => b - a);
+
+   console.log( arr ); // 8, 5, 2, 1, -10
+});
+
+// Copy and sort array
+const prac4Test5 = document.getElementById('copyAndSortArray');
+prac4Test5.addEventListener('click', () => {
+   let arr = ["HTML", "JavaScript", "CSS"];
+
+   let sorted = copySorted(arr);
+
+   function copySorted(arr) {
+      return arr.slice().sort();
+   }
+
+   console.log( sorted ); // CSS, HTML, JavaScript
+   console.log( arr ); // HTML, JavaScript, CSS (no changes)
+});
+
+// Create an extendable calculator
+const prac4Test6 = document.getElementById('extendableCalc');
+prac4Test6.addEventListener('click', () => {
+   function calculate(str) {
+      let result = 0;
+
+      splitString = str.split(' ');
+
+      // conditionally assess each element
+      for (let i = 0; i < splitString.length; i++) {
+         currItem = splitString[i];
+         switch(currItem) {
+            case '+':
+               result += Number(splitString[++i]);
+               break;
+            case '-':
+               result -= Number(splitString[++i]);
+               break;
+            default:
+               result += Number(currItem);
+               break;
+         }
+      }
+
+      return result;
+   }
+
+   console.log(calculate('3 + 7'));
+});
