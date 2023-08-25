@@ -592,31 +592,131 @@ newButton('practice4', 'Shuffle an array', () => {
    shuffle(arr);
    // arr = [3, 2, 1]
 
-   // shuffle(arr);
+   shuffle(arr);
    // arr = [2, 1, 3]
 
-   // shuffle(arr);
+   shuffle(arr);
    // arr = [3, 1, 2]
    // ...
+   
+   function shuffle(array) {
+      for (let i = array.length - 1; i > 0; i--) {
+         let j = Math.floor(Math.random() * (i + 1));
+         [array[i], array[j]] = [array[j], array[i]];
+      }
+   }
 
-   function shuffle(arr) {
-      // - grab current index
-      // - generate random val to pick from remaining indices
-      // - swap
-      // - deal with arr.length = [0, 1]
-      // - how do we end?
-      console.log('begin', arr);
-      arr.map((item, index, arr) => {
-         let numOfRemainingIndicies = arr.length > 0 ? arr.length - index - 1 : 0;
-         let swapIndex = numOfRemainingIndicies > 0 ?
-            Math.floor(Math.random() * numOfRemainingIndicies) + index + 1 :
-            0;
+   // counts of appearances for all possible permutations
+   let count = {
+      '123': 0,
+      '132': 0,
+      '213': 0,
+      '231': 0,
+      '321': 0,
+      '312': 0
+   };
 
-         let temp = arr[index];
-         arr[index] = arr[swapIndex];
-         arr[swapIndex] = temp;
+   for (let i = 0; i < 1000000; i++) {
+      let array = [1, 2, 3];
+      shuffle(array);
+      count[array.join('')]++;
+   }
+
+   // show counts of all possible permutations
+   for (let key in count) {
+      console.log(`${key}: ${count[key]}`);
+   }
+});
+
+// Get average age
+newButton('practice4', 'Get average age', () => {
+   let john = { name: "John", age: 25 };
+   let pete = { name: "Pete", age: 30 };
+   let mary = { name: "Mary", age: 29 };
+
+   let arr = [ john, pete, mary ];
+
+   console.log( getAverageAge(arr) ); // (25 + 30 + 29) / 3 = 28
+
+   function getAverageAge(arr) {
+      return arr.reduce((sum, item) => sum + item.age, 0) / arr.length;
+   }
+})
+
+// Filter unique array members
+// This one murdered me... ugh
+newButton('practice4', 'Filter unique array members', () => {
+   function unique(arr) {
+      
+      return arr.reduce((accum, currVal) => {
+
+         if (!accum.includes(currVal)) {
+
+            accum.push(currVal);
+
+         }
+
+         return accum;
+
+      }, []);
+
+   }
+
+   let strings = ["Hare", "Krishna", "Hare", "Krishna",
+      "Krishna", "Krishna", "Hare", "Hare", ":-O"
+   ];
+
+   console.log( unique(strings) ); // Hare, Krishna, :-O
+});
+
+// Filter unique array members... using my stubborness to attempt optimization
+newButton('practice4', 'Filter unique array members via my stubborness', () => {
+   function unique(arr) {
+      // store the count of each name in an object
+      // return only the key names collected
+      const nameFrequency = {}
+
+      arr.forEach((item) => {
+         if (!nameFrequency[item]) nameFrequency[item] = 0;
+         nameFrequency[item]++;
       });
 
-      console.log(arr);
+      return Object.keys(nameFrequency);
+   }
+
+   let strings = ["Hare", "Krishna", "Hare", "Krishna",
+      "Krishna", "Krishna", "Hare", "Hare", ":-O"
+   ];
+
+   console.log( unique(strings) ); // Hare, Krishna, :-O
+});
+
+// Create keyed object from array
+newButton('practice4', 'Create keyed object from array', () => {
+   let users = [
+      {id: 'john', name: "John Smith", age: 20},
+      {id: 'ann', name: "Ann Smith", age: 24},
+      {id: 'pete', name: "Pete Peterson", age: 31},
+   ];
+      
+   let usersById = groupById(users);
+
+   console.table(usersById);
+   
+   /*
+   // after the call we should have:
+   
+   usersById = {
+   john: {id: 'john', name: "John Smith", age: 20},
+   ann: {id: 'ann', name: "Ann Smith", age: 24},
+   pete: {id: 'pete', name: "Pete Peterson", age: 31},
+   }
+   */
+
+   function groupById(arr) {
+      return arr.reduce((reducedArr, currItem) => {
+         reducedArr[currItem.id] = currItem;
+         return reducedArr;
+      }, {});
    }
 });
