@@ -525,3 +525,43 @@ prac4test9.addEventListener('click', () => {
    alert( usersMapped[0].fullName ) // John Smith
    console.table(usersMapped);
 });
+
+// At this point, my stubborn behind really wanted to automate the HTML & JS
+// creation of each practice button
+function newButton(idContainer, buttonText, onClickFunc) {
+   const buttonsContainer = document.getElementById(idContainer);
+   const newButton = document.createElement('button');
+
+   newButton.id = camelize(buttonText);
+   newButton.textContent = buttonText;
+   newButton.addEventListener('click', onClickFunc);
+
+   buttonsContainer.appendChild(newButton);
+
+   function camelize(inputString) {
+      // Split the input string by spaces, underscores, or hyphens
+      const words = inputString.split(/[ _-]+/);
+
+      // If there's only one word or an empty string, return it as is
+      if (words.length === 1) {
+         return words[0].toLowerCase(); // Convert the word to lowercase
+      }
+
+      // Capitalize the first letter of each word (except the first one)
+      const camelCaseWords = words.map((word, index) => {
+         if (index === 0) {
+           return word.toLowerCase(); // Convert the first word to lowercase
+         } else {
+           return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+         }
+      });
+
+      // Join the words together to form the camelCase string
+      return camelCaseWords.join('');
+   }
+}
+
+// Sort users by age
+newButton('practice4', 'Sort users by age', () => {
+   
+});
