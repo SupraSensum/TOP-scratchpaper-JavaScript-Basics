@@ -469,4 +469,59 @@ prac4Test7.addEventListener('click', () => {
       };
       this.addMethod = (name, func) => this[name] = func;
    }
+
+   let powerCalc = new Calculator;
+   powerCalc.addMethod("*", (a, b) => a * b);
+   powerCalc.addMethod("/", (a, b) => a / b);
+   powerCalc.addMethod("**", (a, b) => a ** b);
+
+   let result = powerCalc.calculate("2 ** 3");
+   console.log( result ); // 8
+   result = powerCalc.calculate("9 / 3");
+   console.log( result ); // 3
+   result = powerCalc.calculate("3 * 3");
+   console.log( result ); // 9
+});
+
+// Map to names
+const prac4test8 = document.getElementById('mapToNames');
+prac4test8.addEventListener('click', () => {
+   let john = { name: "John", age: 25 };
+   let pete = { name: "Pete", age: 30 };
+   let mary = { name: "Mary", age: 28 };
+
+   let users = [ john, pete, mary ];
+
+   let names = users.map((user) => user.name);
+
+   console.log( names ); // John, Pete, Mary
+});
+
+// Map to objects
+const prac4test9 = document.getElementById('mapToObjects');
+prac4test9.addEventListener('click', () => {
+   let john = { name: "John", surname: "Smith", id: 1 };
+   let pete = { name: "Pete", surname: "Hunt", id: 2 };
+   let mary = { name: "Mary", surname: "Key", id: 3 };
+
+   let users = [ john, pete, mary ];
+
+   let usersMapped = users.map(user => {
+      return {
+         fullName: [user.name, user.surname].join(' '),
+         id: user.id,
+      }
+   });
+
+   /*
+   usersMapped = [
+   { fullName: "John Smith", id: 1 },
+   { fullName: "Pete Hunt", id: 2 },
+   { fullName: "Mary Key", id: 3 }
+   ]
+   */
+
+   alert( usersMapped[0].id ) // 1
+   alert( usersMapped[0].fullName ) // John Smith
+   console.table(usersMapped);
 });
