@@ -1,6 +1,47 @@
 // Don't expect much code cleanliness here. This is all about just testing
 // recently learned subjects
 
+// 
+// MY MAGNUM OPUS
+// 
+// At this point, my stubborn behind really wanted to automate the HTML & JS
+// creation of each practice button
+function newButton(idContainer, buttonText, onClickFunc) {
+   const buttonsContainer = document.getElementById(idContainer);
+   const newButton = document.createElement('button');
+
+   newButton.id = camelize(buttonText);
+   newButton.textContent = buttonText;
+   newButton.addEventListener('click', onClickFunc);
+
+   buttonsContainer.appendChild(newButton);
+
+   function camelize(inputString) {
+      // Split the input string by spaces, underscores, or hyphens
+      const words = inputString.split(/[ _-]+/);
+
+      // If there's only one word or an empty string, return it as is
+      if (words.length === 1) {
+         return words[0].toLowerCase(); // Convert the word to lowercase
+      }
+
+      // Capitalize the first letter of each word (except the first one)
+      const camelCaseWords = words.map((word, index) => {
+         if (index === 0) {
+           return word.toLowerCase(); // Convert the first word to lowercase
+         } else {
+           return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+         }
+      });
+
+      // Join the words together to form the camelCase string
+      return camelCaseWords.join('');
+   }
+}
+// 
+// MY MAGNUM OPUS
+// 
+
 const objectTestButton = document.getElementById('objectPropertyTest');
 objectTestButton.addEventListener('click', () => {
    let currentDesire = prompt('Whataya want?', 'food');
@@ -521,47 +562,61 @@ prac4test9.addEventListener('click', () => {
    ]
    */
 
-   alert( usersMapped[0].id ) // 1
-   alert( usersMapped[0].fullName ) // John Smith
-   console.table(usersMapped);
+   console.log( usersMapped[0].id ) // 1
+   console.log( usersMapped[0].fullName ) // John Smith
 });
-
-// At this point, my stubborn behind really wanted to automate the HTML & JS
-// creation of each practice button
-function newButton(idContainer, buttonText, onClickFunc) {
-   const buttonsContainer = document.getElementById(idContainer);
-   const newButton = document.createElement('button');
-
-   newButton.id = camelize(buttonText);
-   newButton.textContent = buttonText;
-   newButton.addEventListener('click', onClickFunc);
-
-   buttonsContainer.appendChild(newButton);
-
-   function camelize(inputString) {
-      // Split the input string by spaces, underscores, or hyphens
-      const words = inputString.split(/[ _-]+/);
-
-      // If there's only one word or an empty string, return it as is
-      if (words.length === 1) {
-         return words[0].toLowerCase(); // Convert the word to lowercase
-      }
-
-      // Capitalize the first letter of each word (except the first one)
-      const camelCaseWords = words.map((word, index) => {
-         if (index === 0) {
-           return word.toLowerCase(); // Convert the first word to lowercase
-         } else {
-           return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
-         }
-      });
-
-      // Join the words together to form the camelCase string
-      return camelCaseWords.join('');
-   }
-}
 
 // Sort users by age
 newButton('practice4', 'Sort users by age', () => {
-   
+   let john = { name: "John", age: 25 };
+   let pete = { name: "Pete", age: 30 };
+   let mary = { name: "Mary", age: 28 };
+
+   let arr = [ pete, john, mary ];
+
+   sortByAge(arr);
+
+   // now: [john, mary, pete]
+   console.log(arr[0].name); // John
+   console.log(arr[1].name); // Mary
+   console.log(arr[2].name); // Pete
+
+   function sortByAge(users) {
+      users.sort((a, b) => a.age - b.age);
+   }
+});
+
+newButton('practice4', 'Shuffle an array', () => {
+   let arr = [1, 2, 3];
+
+   shuffle(arr);
+   // arr = [3, 2, 1]
+
+   // shuffle(arr);
+   // arr = [2, 1, 3]
+
+   // shuffle(arr);
+   // arr = [3, 1, 2]
+   // ...
+
+   function shuffle(arr) {
+      // - grab current index
+      // - generate random val to pick from remaining indices
+      // - swap
+      // - deal with arr.length = [0, 1]
+      // - how do we end?
+      console.log('begin', arr);
+      arr.map((item, index, arr) => {
+         let numOfRemainingIndicies = arr.length > 0 ? arr.length - index - 1 : 0;
+         let swapIndex = numOfRemainingIndicies > 0 ?
+            Math.floor(Math.random() * numOfRemainingIndicies) + index + 1 :
+            0;
+
+         let temp = arr[index];
+         arr[index] = arr[swapIndex];
+         arr[swapIndex] = temp;
+      });
+
+      console.log(arr);
+   }
 });
